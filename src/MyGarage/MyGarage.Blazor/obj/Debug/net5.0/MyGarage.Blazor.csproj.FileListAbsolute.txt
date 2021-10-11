@@ -622,7 +622,12 @@ C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\M
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\scopedcss\bundle\MyGarage.Blazor.styles.css
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\scopedcss\projectbundle\MyGarage.Blazor.bundle.scp.css
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\MyGarage.Blazor.RazorTargetAssemblyInfo.cache
-C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\MyGarage.Blazor.csproj.CopyComplete
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\MyGarage.Blazor.dll
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\ref\MyGarage.Blazor.dll
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\MyGarage.Blazor.pdb
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\bin\Debug\net5.0\wwwroot\_framework\MyGarage.Shared.dll.gz
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\bin\Debug\net5.0\wwwroot\_framework\MyGarage.Shared.dll
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\bin\Debug\net5.0\wwwroot\_framework\MyGarage.Shared.pdb
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\EmployeeOverview.razor.g.cs
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\Razor\Pages\EmployeeOverview.razor.g.cs
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\build-gz\3dVtD4WJ.gz

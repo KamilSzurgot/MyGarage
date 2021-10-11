@@ -305,6 +305,16 @@
         "runtime": {
           "lib/net5.0/System.Net.Http.Json.dll": {}
         }
+      },
+      "MyGarage.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/MyGarage.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyGarage.Shared.dll": {}
+        }
       }
     },
     "net5.0/browser-wasm": {
@@ -610,6 +620,16 @@
         },
         "runtime": {
           "lib/net5.0/System.Net.Http.Json.dll": {}
+        }
+      },
+      "MyGarage.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/MyGarage.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyGarage.Shared.dll": {}
         }
       }
     }
@@ -1135,12 +1155,18 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "MyGarage.Shared/1.0.0": {
+      "type": "project",
+      "path": "../MyGarage.Shared/MyGarage.Shared.csproj",
+      "msbuildProject": "../MyGarage.Shared/MyGarage.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.AspNetCore.Components.WebAssembly >= 5.0.10",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 5.0.10",
+      "MyGarage.Shared >= 1.0.0",
       "System.Net.Http.Json >= 5.0.0"
     ]
   },
@@ -1175,7 +1201,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\kamil\\Desktop\\szkola\\4 rok\\7 semestr\\inzynierka\\MyGarage\\src\\MyGarage\\MyGarage.Shared\\MyGarage.Shared.csproj": {
+              "projectPath": "C:\\Users\\kamil\\Desktop\\szkola\\4 rok\\7 semestr\\inzynierka\\MyGarage\\src\\MyGarage\\MyGarage.Shared\\MyGarage.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

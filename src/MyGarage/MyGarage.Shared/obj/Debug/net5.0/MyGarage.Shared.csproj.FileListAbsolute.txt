@@ -1,0 +1,12 @@
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Shared\bin\Debug\net5.0\MyGarage.Shared.deps.json
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Shared\bin\Debug\net5.0\MyGarage.Shared.dll
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Shared\bin\Debug\net5.0\ref\MyGarage.Shared.dll
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Shared\bin\Debug\net5.0\MyGarage.Shared.pdb
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Shared\obj\Debug\net5.0\MyGarage.Shared.csproj.AssemblyReference.cache
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Shared\obj\Debug\net5.0\MyGarage.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Shared\obj\Debug\net5.0\MyGarage.Shared.AssemblyInfoInputs.cache
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Shared\obj\Debug\net5.0\MyGarage.Shared.AssemblyInfo.cs
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Shared\obj\Debug\net5.0\MyGarage.Shared.csproj.CoreCompileInputs.cache
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Shared\obj\Debug\net5.0\MyGarage.Shared.dll
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Shared\obj\Debug\net5.0\ref\MyGarage.Shared.dll
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Shared\obj\Debug\net5.0\MyGarage.Shared.pdb

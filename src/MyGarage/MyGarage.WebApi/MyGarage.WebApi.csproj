@@ -19,8 +19,4 @@
     <ProjectReference Include="..\MyGarage.Shared\MyGarage.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-
 </Project>

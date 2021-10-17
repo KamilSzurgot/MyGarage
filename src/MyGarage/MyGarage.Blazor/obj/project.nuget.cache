@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cFBS5gvEMNqw4afz0/YzTX+rCqv9CHurVb6SxLpiBfhv0hANyCO4kxBGCE853rEc+iUtYlrD+Pr9ssqr9OG6Cg==",
+  "dgSpecHash": "3PWX1IN8jixGWQRb7pdEVGjb2tc9kIb05dg+TwHuKa1HOBwiUkzNHLfP9CnP3Ry5cs9sQQaMhpnX4dVrmuuQ5w==",
   "success": true,
   "projectFilePath": "C:\\Users\\kamil\\Desktop\\szkola\\4 rok\\7 semestr\\inzynierka\\MyGarage\\src\\MyGarage\\MyGarage.Blazor\\MyGarage.Blazor.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,7 @@
     "C:\\Users\\kamil\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\5.0.0\\microsoft.extensions.fileproviders.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\5.0.0\\microsoft.extensions.fileproviders.physical.5.0.0.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\5.0.0\\microsoft.extensions.filesystemglobbing.5.0.0.nupkg.sha512",
+    "C:\\Users\\kamil\\.nuget\\packages\\microsoft.extensions.http\\5.0.0\\microsoft.extensions.http.5.0.0.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",

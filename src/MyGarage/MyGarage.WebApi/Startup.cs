@@ -28,6 +28,11 @@ namespace MyGarage.WebApi
             services.AddScoped<IJobCategoryRepository, JobCategoryRepository>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader());
+            });
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -50,6 +55,8 @@ namespace MyGarage.WebApi
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("Open");
 
             app.UseEndpoints(endpoints =>
             {

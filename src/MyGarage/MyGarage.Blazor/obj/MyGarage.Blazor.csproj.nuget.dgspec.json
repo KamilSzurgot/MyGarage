@@ -57,6 +57,10 @@
               "target": "Package",
               "version": "[5.0.10, )"
             },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "System.Net.Http.Json": {
               "target": "Package",
               "version": "[5.0.0, )"

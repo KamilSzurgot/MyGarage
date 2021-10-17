@@ -57,7 +57,6 @@ C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\M
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.WebApi\obj\Debug\net5.0\staticwebassets\MyGarage.WebApi.StaticWebAssets.xml
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.WebApi\obj\Debug\net5.0\scopedcss\bundle\MyGarage.WebApi.styles.css
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.WebApi\obj\Debug\net5.0\MyGarage.WebApi.RazorTargetAssemblyInfo.cache
-C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.WebApi\obj\Debug\net5.0\MyGarage.WebApi.csproj.CopyComplete
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.WebApi\obj\Debug\net5.0\MyGarage.WebApi.dll
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.WebApi\obj\Debug\net5.0\ref\MyGarage.WebApi.dll
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.WebApi\obj\Debug\net5.0\MyGarage.WebApi.pdb

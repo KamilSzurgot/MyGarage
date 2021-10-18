@@ -636,3 +636,5 @@ C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\M
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\bin\Debug\net5.0\wwwroot\_framework\Microsoft.Extensions.Http.dll.gz
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\bin\Debug\net5.0\wwwroot\_framework\Microsoft.Extensions.Http.dll
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\build-gz\bnzCDuZh.gz
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\EmployeeEdit.razor.g.cs
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\Razor\Pages\EmployeeEdit.razor.g.cs

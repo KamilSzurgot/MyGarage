@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyGarage.Blazor", "MyGarage
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyGarage.Shared", "MyGarage.Shared\MyGarage.Shared.csproj", "{E71244EB-B076-42F2-8963-4C8BD10352F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGarage.WebApi", "MyGarage.WebApi\MyGarage.WebApi.csproj", "{929B996F-4C29-41B7-8098-8B75F8C023CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyGarage.WebApi", "MyGarage.WebApi\MyGarage.WebApi.csproj", "{929B996F-4C29-41B7-8098-8B75F8C023CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

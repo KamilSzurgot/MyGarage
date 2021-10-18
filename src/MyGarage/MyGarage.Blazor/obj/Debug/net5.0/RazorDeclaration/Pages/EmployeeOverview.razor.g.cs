@@ -105,7 +105,7 @@ using MyGarage.Blazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\Pages\EmployeeOverview.razor"
+#line 44 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\Pages\EmployeeOverview.razor"
        
     public IEnumerable<Employee> Employees { get; set; }
 

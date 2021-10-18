@@ -106,19 +106,38 @@ using MyGarage.Blazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 48 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\Pages\EmployeeEdit.razor"
+#line 123 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\Pages\EmployeeEdit.razor"
        
     [Inject]
     public IEmployeeDataService EmployeeDataService { get; set; }
+
+    [Inject]
+    public ICountryDataService CountryDataService { get; set; }
+
+    [Inject]
+    public IJobCategoryDataService JobCategoryDataService { get; set; }
 
     [Parameter]
     public string EmployeeId { get; set; }
 
     public Employee Employee { get; set; } = new Employee();
 
+    public List<Country> Countries { get; set; } = new List<Country>();
+
+    public List<JobCategory> JobCategories { get; set; } = new List<JobCategory>();
+
+    protected string CountryId = string.Empty;
+
+    protected string JobCategoryId = string.Empty;
+
     protected async override Task OnInitializedAsync()
     {
         Employee = await EmployeeDataService.GetEmployeeDetails(int.Parse(EmployeeId));
+        Countries = (await CountryDataService.GetAllCountries()).ToList();
+        JobCategories = (await JobCategoryDataService.GetAllJobCategories()).ToList();
+
+        CountryId = Employee.CountryId.ToString();
+        JobCategoryId = Employee.JobCategoryId.ToString();
     }
 
 #line default

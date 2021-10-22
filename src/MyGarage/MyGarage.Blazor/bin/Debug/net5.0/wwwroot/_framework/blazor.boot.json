@@ -197,12 +197,12 @@
       "netstandard.dll": "sha256-5TcSqPhm3fAT6s3NH7+BMGakcfGgZGd3\/\/cVwVs2VPI=",
       "System.Private.CoreLib.dll": "sha256-VJv3DLM\/G0m\/RnTeWL9X8mkbxlsn8nNRhm0BHYEY+uo=",
       "MyGarage.Shared.dll": "sha256-7QmOidyV09pHBQuoAYs1ivFzmozWD2qa+XONIZR6Dqg=",
-      "MyGarage.Blazor.dll": "sha256-hqxRynKcUAC4waPw\/YAdN5dxyzYJjNP\/49tIWvk2Sgk="
+      "MyGarage.Blazor.dll": "sha256-M39YsoE85xl4mC7uertRe3iZW\/135q6bnNzoOAmsmfA="
     },
     "lazyAssembly": null,
     "pdb": {
       "MyGarage.Shared.pdb": "sha256-WVXaOBFdcAd3fTNG17rsgfW253OZ3z8NBcVzCvqCZ0g=",
-      "MyGarage.Blazor.pdb": "sha256-r+9QPiKhN8oXCalS2ORuD6BXXCvweRosTt1Oy\/AFO0s="
+      "MyGarage.Blazor.pdb": "sha256-b6a7BZrJxJ+ifAqXrrrYLsqDhILl2iIMX4WWzwBajeM="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-PvlHrby1PYtdX46ITs6pB8iDNqXNcewh8Eoa\/Gm2+GM=",

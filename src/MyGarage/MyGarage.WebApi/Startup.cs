@@ -30,7 +30,13 @@ namespace MyGarage.WebApi
 
             services.AddCors(options =>
             {
-                options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader());
+                options.AddPolicy("AllowAll",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader();
+                    });
             });
 
             services.AddControllers();
@@ -56,7 +62,7 @@ namespace MyGarage.WebApi
 
             app.UseAuthorization();
 
-            app.UseCors("Open");
+            app.UseCors("AllowAll");
 
             app.UseEndpoints(endpoints =>
             {

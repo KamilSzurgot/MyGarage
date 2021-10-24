@@ -638,3 +638,4 @@ C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\M
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\build-gz\bnzCDuZh.gz
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\EmployeeEdit.razor.g.cs
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\Razor\Pages\EmployeeEdit.razor.g.cs
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\MyGarage.Blazor.csproj.CopyComplete

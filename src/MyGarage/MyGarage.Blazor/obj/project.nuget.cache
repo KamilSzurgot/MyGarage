@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3PWX1IN8jixGWQRb7pdEVGjb2tc9kIb05dg+TwHuKa1HOBwiUkzNHLfP9CnP3Ry5cs9sQQaMhpnX4dVrmuuQ5w==",
+  "dgSpecHash": "zvsGyRyYF42BBIKmiuMCUtmkUDggfg+mXVwYPUtPR1Z7QiuLX7SgyNrMLBPoatkJ/7t1HhsLGLuOxTa58cckiQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\kamil\\Desktop\\szkola\\4 rok\\7 semestr\\inzynierka\\MyGarage\\src\\MyGarage\\MyGarage.Blazor\\MyGarage.Blazor.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "C:\\Users\\kamil\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\microsoft.jsinterop\\5.0.10\\microsoft.jsinterop.5.0.10.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\microsoft.jsinterop.webassembly\\5.0.10\\microsoft.jsinterop.webassembly.5.0.10.nupkg.sha512",
+    "C:\\Users\\kamil\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\microsoft.netcore.app.runtime.browser-wasm\\5.0.10\\microsoft.netcore.app.runtime.browser-wasm.5.0.10.nupkg.sha512"

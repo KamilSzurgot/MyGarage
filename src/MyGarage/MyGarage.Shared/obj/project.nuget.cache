@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "OGiSyG2Zjx4ZfTyx5y9EuOx69sE6tUM2VpsuCoO8nJBYpudaaItIfJO1TvoWkQJLpqfCSMD8+JWqHaXco0SXZA==",
+  "dgSpecHash": "zQyyOqbT+Ia2RDragVEW/54sqdFcfLmhKRZylZ6/mgcMj5OGPnAW7SKxkyWYIpvGUAOBy8kQzjZWGbYHShV18g==",
   "success": true,
   "projectFilePath": "C:\\Users\\kamil\\Desktop\\szkola\\4 rok\\7 semestr\\inzynierka\\MyGarage\\src\\MyGarage\\MyGarage.Shared\\MyGarage.Shared.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\kamil\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

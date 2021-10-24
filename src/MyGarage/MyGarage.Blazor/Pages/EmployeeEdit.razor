@@ -2,6 +2,7 @@
 @page "/employeeedit/{EmployeeId}"
 @using MyGarage.Shared
 @using MyGarage.Blazor.Services
+@inject NavigationManager NavigationManager
 
 
 @if (!Saved)
@@ -12,6 +13,9 @@
     <h1 class="page-title">Details for @Employee.FirstName @Employee.LastName</h1>
     <EditForm Model="@Employee" OnValidSubmit="@HandleValidSubmit"
               OnInvalidSubmit="@HandleInvalidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary></ValidationSummary>
+
         <div class="form-group row">
             <label for="lastName" class="col-sm-3">Last Name: </label>
             <InputText id="lastName" class="form-control col-sm-8" @bind-Value="@Employee.LastName" placeholder="Enter last name"></InputText>
@@ -123,6 +127,13 @@
 
         <button type="submit" class="btn btn-primary edit-btn">Save</button>
 
+        @if (Employee.EmployeeId > 0)
+                {
+                    <a class="btn btn-danger" @onclick="@DeleteEmployee">Delete</a>
+                }
+
+        <a class="btn btn-outline-primary" @onclick="@NavigateToOverview">Back to overview</a>
+
     </EditForm>
 
 </section>
@@ -220,4 +231,17 @@ else
         Message = "Validation error";
     }
 
+    protected async Task DeleteEmployee()
+    {
+        await EmployeeDataService.DeleteEmployee(Employee.EmployeeId);
+
+        StatusClass = "alert-success";
+        Message = "Employee deleted";
+        Saved = true;
+    }
+
+    protected void NavigateToOverview()
+        {
+        NavigationManager.NavigateTo("/employeeoverview");
+        }
 }

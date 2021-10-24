@@ -106,7 +106,7 @@ using MyGarage.Blazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 136 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\Pages\EmployeeEdit.razor"
+#line 147 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\Pages\EmployeeEdit.razor"
        
     [Inject]
     public IEmployeeDataService EmployeeDataService { get; set; }
@@ -194,10 +194,24 @@ using MyGarage.Blazor.Services;
         Message = "Validation error";
     }
 
+    protected async Task DeleteEmployee()
+    {
+        await EmployeeDataService.DeleteEmployee(Employee.EmployeeId);
+
+        StatusClass = "alert-success";
+        Message = "Employee deleted";
+        Saved = true;
+    }
+
+    protected void NavigateToOverview()
+        {
+        NavigationManager.NavigateTo("/employeeoverview");
+        }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -1,0 +1,90 @@
+﻿@using MyGarage.Shared;
+@using MyGarage.Blazor.Services;
+
+
+@if (ShowDialog)
+{
+    <div class="modal fade show d-block" id="exampleModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="titleLabel">Employee Quick Add</h5>
+                    <button type="button" class="close" @onclick="@Close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <EditForm Model="@Employee" OnValidSubmit="@HandleValidSubmit">
+
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+
+                        <div class="form-group">
+                            <label for="lastName">Last name: </label>
+                            <InputText id="lastName" class="form-control" @bind-Value="@Employee.LastName" placeholder="Enter last name"></InputText>
+                            <ValidationMessage For="@(() => Employee.LastName)" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="firstName">First name: </label>
+                            <InputText id="firstName" class="form-control" @bind-Value="@Employee.FirstName" placeholder="Enter first name"></InputText>
+                            <ValidationMessage For="@(() => Employee.FirstName)" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email: </label>
+                            <InputText id="email" class="form-control" @bind-Value="@Employee.Email" placeholder="Enter email"></InputText>
+                            <ValidationMessage For="@(() => Employee.Email)" />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save employee</button>
+                        <a class="btn btn-outline-primary" @onclick="@Close">Close</a>
+                    </EditForm>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+@code {
+    public Employee Employee { get; set; } = new Employee { CountryId = 1, JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
+
+    [Inject]
+    public IEmployeeDataService EmployeeDataService { get; set; }
+
+    public bool ShowDialog { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> CloseEventCallback { get; set; }
+
+    public void ResetDialog()
+    {
+        Employee = new Employee { CountryId = 1, JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
+    }
+
+    public void Show()
+    {
+        ResetDialog();
+        ShowDialog = true;
+        StateHasChanged();
+    }
+
+    public void Close()
+    {
+        ShowDialog = false;
+        StateHasChanged();
+    }
+
+    protected async Task HandleValidSubmit()
+    {
+        await EmployeeDataService.AddEmployee(Employee);
+        ShowDialog = false;
+
+        await CloseEventCallback.InvokeAsync(true);
+        StateHasChanged();
+    }
+}

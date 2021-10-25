@@ -83,6 +83,13 @@ using MyGarage.Blazor.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 11 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\_Imports.razor"
+using MyGarage.Blazor.Components;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\Pages\EmployeeOverview.razor"
 using MyGarage.Shared;
 
@@ -105,16 +112,29 @@ using MyGarage.Blazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 44 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\Pages\EmployeeOverview.razor"
+#line 46 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\Pages\EmployeeOverview.razor"
        
     public IEnumerable<Employee> Employees { get; set; }
 
     [Inject]
     public IEmployeeDataService EmployeeDataService { get; set; }
 
+    protected AddEmployeeDialog AddEmployeeDialog { get; set; }
+
     protected async override Task OnInitializedAsync()
     {
         Employees = (await EmployeeDataService.GetAllEmployees()).ToList();
+    }
+
+    protected void QuickAddEmployee()
+    {
+        AddEmployeeDialog.Show();
+    }
+
+    public async void AddEmployeeDialog_OnDialogClose()
+    {
+        Employees = (await EmployeeDataService.GetAllEmployees()).ToList();
+        StateHasChanged();
     }
 
 

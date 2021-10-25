@@ -83,6 +83,13 @@ using MyGarage.Blazor.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 11 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\_Imports.razor"
+using MyGarage.Blazor.Components;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 3 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\Pages\EmployeeEdit.razor"
 using MyGarage.Shared;
 

@@ -39,6 +39,8 @@ else
         </tbody>
     </table>
 }
+<button @onclick="QuickAddEmployee" class="btn btn-dark table-btn quick-add-btn">&nbsp;&nbsp;+&nbsp;&nbsp;</button>
+<AddEmployeeDialog @ref="AddEmployeeDialog" CloseEventCallback="@AddEmployeeDialog_OnDialogClose"></AddEmployeeDialog>
 
 
 @code {
@@ -47,9 +49,22 @@ else
     [Inject]
     public IEmployeeDataService EmployeeDataService { get; set; }
 
+    protected AddEmployeeDialog AddEmployeeDialog { get; set; }
+
     protected async override Task OnInitializedAsync()
     {
         Employees = (await EmployeeDataService.GetAllEmployees()).ToList();
+    }
+
+    protected void QuickAddEmployee()
+    {
+        AddEmployeeDialog.Show();
+    }
+
+    public async void AddEmployeeDialog_OnDialogClose()
+    {
+        Employees = (await EmployeeDataService.GetAllEmployees()).ToList();
+        StateHasChanged();
     }
 
 }

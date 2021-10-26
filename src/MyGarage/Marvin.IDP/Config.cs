@@ -23,8 +23,8 @@ namespace Marvin.IDP
         public static IEnumerable<ApiResource> Apis =>
             new ApiResource[]
             {
-                new ApiResource("bethanyspieshophrapi", 
-                    "Bethany's Pie Shop HR API", 
+                new ApiResource("mygaragewebapi", 
+                    "MyGarage API", 
                     new [] { "country" })
             };
 
@@ -34,8 +34,8 @@ namespace Marvin.IDP
             { 
                 new Client
                 {
-                    ClientId = "bethanyspieshophr",
-                    ClientName = "Bethany's Pie Shop HRM",
+                    ClientId = "mygarage",
+                    ClientName = "MyGarage",
                     AllowedGrantTypes = GrantTypes.Code,
                     RequireClientSecret = false,
                     RequirePkce = true,

@@ -67,46 +67,12 @@
         </div>
 
         <div class="form-group row">
-            <label for="longitude" class="col-sm-3">Longitude: </label>
-            <InputNumber id="longitude" class="form-control col-sm-8" @bind-Value="@Employee.Longitude"></InputNumber>
-        </div>
-
-        <div class="form-group row">
-            <label for="latitude" class="col-sm-3">Latitude: </label>
-            <InputNumber id="latitude" class="form-control col-sm-8" @bind-Value="@Employee.Latitude"></InputNumber>
-        </div>
-
-        <div class="form-group row">
-            <label for="smoker" class=" offset-sm-3">
-                <InputCheckbox id="smoker" @bind-Value="@Employee.Smoker"></InputCheckbox>
-                &nbsp;Smoker
-            </label>
-        </div>
-
-        <div class="form-group row">
             <label for="jobcategory" class="col-sm-3">Job category: </label>
             <InputSelect id="jobcategory" class="form-control col-sm-8" @bind-Value="@JobCategoryId">
                 @foreach (var jobCategory in JobCategories)
                 {
                     <option value="@jobCategory.JobCategoryId">@jobCategory.JobCategoryName</option>
                 }
-            </InputSelect>
-        </div>
-
-        <div class="form-group row">
-            <label for="gender" class="col-sm-3">Gender: </label>
-            <InputSelect id="gender" class="form-control col-sm-8" @bind-Value=@Employee.Gender>
-                <option value="@(Gender.Male)">Male</option>
-                <option value="@(Gender.Female)">Female</option>
-            </InputSelect>
-        </div>
-
-        <div class="form-group row">
-            <label for="maritalstatus" class="col-sm-3">Marital status: </label>
-            <InputSelect id="maritalstatus" class="form-control col-sm-8" @bind-Value=@Employee.MaritalStatus>
-                <option value="@(MaritalStatus.Single)">Single</option>
-                <option value="@(MaritalStatus.Married)">Married</option>
-                <option value="@(MaritalStatus.Other)">Other</option>
             </InputSelect>
         </div>
 

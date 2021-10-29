@@ -90,13 +90,6 @@ using MyGarage.Blazor.Components;
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\_Imports.razor"
-using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 1 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\Components\AddEmployeeDialog.razor"
 using MyGarage.Shared;
 

@@ -54,9 +54,7 @@ namespace MyGarage.WebApi.Migrations
                     Comment = table.Column<string>(nullable: true),
                     JoinedDate = table.Column<DateTime>(nullable: true),
                     ExitDate = table.Column<DateTime>(nullable: true),
-                    JobCategoryId = table.Column<int>(nullable: false),
-                    Latitude = table.Column<double>(nullable: false),
-                    Longitude = table.Column<double>(nullable: false)
+                    JobCategoryId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

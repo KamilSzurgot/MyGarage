@@ -13,14 +13,14 @@ namespace MyGarage.WebApi.Models
             _appDbContext = appDbContext;
         }
 
-        public IEnumerable<Country> GetAllCountries()
-        {
-            return _appDbContext.Countries;
-        }
+        //public IEnumerable<Country> GetAllCountries()
+        //{
+        //    return _appDbContext.Countries;
+        //}
 
-        public Country GetCountryById(int countryId)
-        {
-            return _appDbContext.Countries.FirstOrDefault(c => c.CountryId == countryId);
-        }
+        //public Country GetCountryById(int countryId)
+        //{
+        //    return _appDbContext.Countries.FirstOrDefault(c => c.CountryId == countryId);
+        //}
     }
 }

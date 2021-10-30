@@ -5,7 +5,7 @@ namespace MyGarage.WebApi.Models
 {
     public interface ICountryRepository
     {
-        IEnumerable<Country> GetAllCountries();
-        Country GetCountryById(int countryId);
+        //IEnumerable<Country> GetAllCountries();
+        //Country GetCountryById(int countryId);
     }
 }

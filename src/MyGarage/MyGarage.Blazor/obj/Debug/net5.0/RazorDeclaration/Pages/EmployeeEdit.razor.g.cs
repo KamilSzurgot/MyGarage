@@ -129,11 +129,11 @@ using MyGarage.Blazor.Services;
 
     public Employee Employee { get; set; } = new Employee();
 
-    public List<Country> Countries { get; set; } = new List<Country>();
+    //public List<Country> Countries { get; set; } = new List<Country>();
 
     public List<JobCategory> JobCategories { get; set; } = new List<JobCategory>();
 
-    protected string CountryId = string.Empty;
+    //protected string CountryId = string.Empty;
 
     protected string JobCategoryId = string.Empty;
 
@@ -145,7 +145,7 @@ using MyGarage.Blazor.Services;
     {
         Saved = false;
         //Employee = await EmployeeDataService.GetEmployeeDetails(int.Parse(EmployeeId));
-        Countries = (await CountryDataService.GetAllCountries()).ToList();
+        //Countries = (await CountryDataService.GetAllCountries()).ToList();
         JobCategories = (await JobCategoryDataService.GetAllJobCategories()).ToList();
 
         int.TryParse(EmployeeId, out var employeeId);
@@ -160,14 +160,14 @@ using MyGarage.Blazor.Services;
         }
 
 
-        CountryId = Employee.CountryId.ToString();
+        //CountryId = Employee.CountryId.ToString();
         JobCategoryId = Employee.JobCategoryId.ToString();
     }
 
     protected async Task HandleValidSubmit()
     {
         Saved = false;
-        Employee.CountryId = int.Parse(CountryId);
+        //Employee.CountryId = int.Parse(CountryId);
         Employee.JobCategoryId = int.Parse(JobCategoryId);
 
         if (Employee.EmployeeId == 0)

@@ -113,13 +113,10 @@ using MyGarage.Blazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 113 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\Pages\EmployeeEdit.razor"
+#line 103 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\Pages\EmployeeEdit.razor"
        
     [Inject]
     public IEmployeeDataService EmployeeDataService { get; set; }
-
-    [Inject]
-    public ICountryDataService CountryDataService { get; set; }
 
     [Inject]
     public IJobCategoryDataService JobCategoryDataService { get; set; }
@@ -129,11 +126,7 @@ using MyGarage.Blazor.Services;
 
     public Employee Employee { get; set; } = new Employee();
 
-    //public List<Country> Countries { get; set; } = new List<Country>();
-
     public List<JobCategory> JobCategories { get; set; } = new List<JobCategory>();
-
-    //protected string CountryId = string.Empty;
 
     protected string JobCategoryId = string.Empty;
 
@@ -144,8 +137,6 @@ using MyGarage.Blazor.Services;
     protected async override Task OnInitializedAsync()
     {
         Saved = false;
-        //Employee = await EmployeeDataService.GetEmployeeDetails(int.Parse(EmployeeId));
-        //Countries = (await CountryDataService.GetAllCountries()).ToList();
         JobCategories = (await JobCategoryDataService.GetAllJobCategories()).ToList();
 
         int.TryParse(EmployeeId, out var employeeId);
@@ -159,15 +150,12 @@ using MyGarage.Blazor.Services;
             Employee = await EmployeeDataService.GetEmployeeDetails(int.Parse(EmployeeId));
         }
 
-
-        //CountryId = Employee.CountryId.ToString();
         JobCategoryId = Employee.JobCategoryId.ToString();
     }
 
     protected async Task HandleValidSubmit()
     {
         Saved = false;
-        //Employee.CountryId = int.Parse(CountryId);
         Employee.JobCategoryId = int.Parse(JobCategoryId);
 
         if (Employee.EmployeeId == 0)

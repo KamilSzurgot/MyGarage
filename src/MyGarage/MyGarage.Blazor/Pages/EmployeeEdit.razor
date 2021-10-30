@@ -51,16 +51,6 @@
             <InputText id="city" class="form-control col-sm-8" @bind-Value="@Employee.City" placeholder="Enter city"></InputText>
         </div>
 
-        @*<div class="form-group" row>
-            <label for="country" class="col-sm-3">Country: </label>
-            <InputSelect id="country" class="form-control col-sm-8" @bind-Value="@CountryId">
-                @foreach (var country in Countries)
-                {
-                    <option value="@country.CountryId">@country.Name</option>
-                }
-            </InputSelect>
-        </div>*@
-
         <div class="form-group row">
             <label for="phonenumber" class="col-sm-3">Phone number: </label>
             <InputText id="phonenumber" class="form-control col-sm-8" @bind-Value="@Employee.PhoneNumber" placeholder="Enter phone number"></InputText>
@@ -115,9 +105,6 @@ else
     public IEmployeeDataService EmployeeDataService { get; set; }
 
     [Inject]
-    public ICountryDataService CountryDataService { get; set; }
-
-    [Inject]
     public IJobCategoryDataService JobCategoryDataService { get; set; }
 
     [Parameter]
@@ -125,11 +112,7 @@ else
 
     public Employee Employee { get; set; } = new Employee();
 
-    //public List<Country> Countries { get; set; } = new List<Country>();
-
     public List<JobCategory> JobCategories { get; set; } = new List<JobCategory>();
-
-    //protected string CountryId = string.Empty;
 
     protected string JobCategoryId = string.Empty;
 
@@ -140,8 +123,6 @@ else
     protected async override Task OnInitializedAsync()
     {
         Saved = false;
-        //Employee = await EmployeeDataService.GetEmployeeDetails(int.Parse(EmployeeId));
-        //Countries = (await CountryDataService.GetAllCountries()).ToList();
         JobCategories = (await JobCategoryDataService.GetAllJobCategories()).ToList();
 
         int.TryParse(EmployeeId, out var employeeId);
@@ -155,15 +136,12 @@ else
             Employee = await EmployeeDataService.GetEmployeeDetails(int.Parse(EmployeeId));
         }
 
-
-        //CountryId = Employee.CountryId.ToString();
         JobCategoryId = Employee.JobCategoryId.ToString();
     }
 
     protected async Task HandleValidSubmit()
     {
         Saved = false;
-        //Employee.CountryId = int.Parse(CountryId);
         Employee.JobCategoryId = int.Parse(JobCategoryId);
 
         if (Employee.EmployeeId == 0)

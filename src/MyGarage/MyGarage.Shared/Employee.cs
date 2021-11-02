@@ -23,8 +23,6 @@ namespace MyGarage.Shared
         public string Street { get; set; }
         public string Zip { get; set; }
         public string City { get; set; }
-        public int CountryId { get; set; }
-        //public Country Country { get; set; }
         public string PhoneNumber { get; set; }
 
         [StringLength(2000, ErrorMessage = "Comment too long (max 2000 characters)")]

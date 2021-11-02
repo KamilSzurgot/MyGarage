@@ -36,9 +36,6 @@ namespace MyGarage.WebApi.Migrations
                         .HasMaxLength(2000)
                         .HasColumnType("nvarchar(2000)");
 
-                    b.Property<int>("CountryId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -84,7 +81,6 @@ namespace MyGarage.WebApi.Migrations
                             BirthDate = new DateTime(1979, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Brussels",
                             Comment = "Lorem Ipsum",
-                            CountryId = 0,
                             Email = "bethany@bethanyspieshop.com",
                             FirstName = "Bethany",
                             JobCategoryId = 1,
@@ -100,10 +96,9 @@ namespace MyGarage.WebApi.Migrations
                             BirthDate = new DateTime(1979, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Antwerp",
                             Comment = "Lorem Ipsum",
-                            CountryId = 0,
                             Email = "gill@bethanyspieshop.com",
                             FirstName = "Gill",
-                            JobCategoryId = 1,
+                            JobCategoryId = 2,
                             JoinedDate = new DateTime(2017, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LastName = "Cleeren",
                             PhoneNumber = "33999909923",
@@ -130,47 +125,32 @@ namespace MyGarage.WebApi.Migrations
                         new
                         {
                             JobCategoryId = 1,
-                            JobCategoryName = "Pie research"
+                            JobCategoryName = "Electromechanic"
                         },
                         new
                         {
                             JobCategoryId = 2,
-                            JobCategoryName = "Sales"
+                            JobCategoryName = "Mechanic"
                         },
                         new
                         {
                             JobCategoryId = 3,
-                            JobCategoryName = "Management"
+                            JobCategoryName = "Accountant"
                         },
                         new
                         {
                             JobCategoryId = 4,
-                            JobCategoryName = "Store staff"
+                            JobCategoryName = "Car tinsmith"
                         },
                         new
                         {
                             JobCategoryId = 5,
-                            JobCategoryName = "Finance"
+                            JobCategoryName = "Car painter"
                         },
                         new
                         {
                             JobCategoryId = 6,
-                            JobCategoryName = "QA"
-                        },
-                        new
-                        {
-                            JobCategoryId = 7,
-                            JobCategoryName = "IT"
-                        },
-                        new
-                        {
-                            JobCategoryId = 8,
-                            JobCategoryName = "Cleaning"
-                        },
-                        new
-                        {
-                            JobCategoryId = 9,
-                            JobCategoryName = "Bakery"
+                            JobCategoryName = "Customer service office"
                         });
                 });
 

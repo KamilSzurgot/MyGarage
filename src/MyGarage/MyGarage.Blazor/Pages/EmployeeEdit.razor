@@ -7,8 +7,6 @@
 
 @if (!Saved)
 {
-
-
 <section class="employee-edit">
     <h1 class="page-title">Details for @Employee.FirstName @Employee.LastName</h1>
     <EditForm Model="@Employee" OnValidSubmit="@HandleValidSubmit"
@@ -101,21 +99,20 @@ else
     }
 
 @code {
-    [Inject]
-    public IEmployeeDataService EmployeeDataService { get; set; }
+        [Inject]
+        public IEmployeeDataService EmployeeDataService { get; set; }
 
-    [Inject]
-    public IJobCategoryDataService JobCategoryDataService { get; set; }
+        [Inject]
+        public IJobCategoryDataService JobCategoryDataService { get; set; }
 
-    [Parameter]
-    public string EmployeeId { get; set; }
+        [Parameter]
+        public string EmployeeId { get; set; }
 
     public Employee Employee { get; set; } = new Employee();
 
     public List<JobCategory> JobCategories { get; set; } = new List<JobCategory>();
 
     protected string JobCategoryId = string.Empty;
-
     protected string Message = string.Empty;
     protected string StatusClass = string.Empty;
     protected bool Saved;
@@ -129,7 +126,7 @@ else
 
         if (employeeId == 0)
         {
-            Employee = new Employee { CountryId = 1, JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
+            Employee = new Employee { JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now, JobCategory = { JobCategoryId=1}  };
         }
         else
         {
@@ -185,7 +182,7 @@ else
     }
 
     protected void NavigateToOverview()
-        {
+    {
         NavigationManager.NavigateTo("/employeeoverview");
-        }
+    }
 }

@@ -26,6 +26,8 @@ namespace MyGarage.WebApi
 
             services.AddScoped<IJobCategoryRepository, JobCategoryRepository>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IClientRepository, ClientRepository>();
+            services.AddScoped<IRepairRepository, RepairRepository>();
 
             services.AddCors(options =>
             {

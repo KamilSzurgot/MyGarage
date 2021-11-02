@@ -113,23 +113,22 @@ using MyGarage.Blazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 103 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\Pages\EmployeeEdit.razor"
+#line 101 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\Pages\EmployeeEdit.razor"
        
-    [Inject]
-    public IEmployeeDataService EmployeeDataService { get; set; }
+        [Inject]
+        public IEmployeeDataService EmployeeDataService { get; set; }
 
-    [Inject]
-    public IJobCategoryDataService JobCategoryDataService { get; set; }
+        [Inject]
+        public IJobCategoryDataService JobCategoryDataService { get; set; }
 
-    [Parameter]
-    public string EmployeeId { get; set; }
+        [Parameter]
+        public string EmployeeId { get; set; }
 
     public Employee Employee { get; set; } = new Employee();
 
     public List<JobCategory> JobCategories { get; set; } = new List<JobCategory>();
 
     protected string JobCategoryId = string.Empty;
-
     protected string Message = string.Empty;
     protected string StatusClass = string.Empty;
     protected bool Saved;
@@ -143,7 +142,7 @@ using MyGarage.Blazor.Services;
 
         if (employeeId == 0)
         {
-            Employee = new Employee { CountryId = 1, JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
+            Employee = new Employee { JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now, JobCategory = { JobCategoryId=1}  };
         }
         else
         {
@@ -199,9 +198,9 @@ using MyGarage.Blazor.Services;
     }
 
     protected void NavigateToOverview()
-        {
+    {
         NavigationManager.NavigateTo("/employeeoverview");
-        }
+    }
 
 #line default
 #line hidden

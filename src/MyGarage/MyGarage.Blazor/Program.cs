@@ -16,7 +16,8 @@ namespace MyGarage.Blazor
             //builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             builder.Services.AddHttpClient<IEmployeeDataService, EmployeeDataService>(client => client.BaseAddress = new Uri("https://localhost:44381"));
             builder.Services.AddHttpClient<IJobCategoryDataService, JobCategoryDataService>(client => client.BaseAddress = new Uri("https://localhost:44381"));
-
+            builder.Services.AddHttpClient<IClientDataService, ClientDataService>(client => client.BaseAddress = new Uri("https://localhost:44381"));
+            builder.Services.AddHttpClient<IRepairDataService, RepairDataService>(client => client.BaseAddress = new Uri("https://localhost:44381"));
 
             await builder.Build().RunAsync();
         }

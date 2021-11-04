@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace MyGarage.WebApi.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class RepairController : Controller
     {
         private readonly IRepairRepository _repairRepository;

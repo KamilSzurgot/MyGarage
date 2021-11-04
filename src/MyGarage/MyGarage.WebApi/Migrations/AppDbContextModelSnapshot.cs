@@ -154,6 +154,50 @@ namespace MyGarage.WebApi.Migrations
                         });
                 });
 
+            modelBuilder.Entity("MyGarage.Shared.Repair", b =>
+                {
+                    b.Property<int>("RepairId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CarInfo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("RepairId");
+
+                    b.ToTable("Repairs");
+
+                    b.HasData(
+                        new
+                        {
+                            RepairId = 1,
+                            CarInfo = "Volkswagen Ogór",
+                            Comment = "Wymiana silnika",
+                            Email = "wojciech.sz2@o2.pl",
+                            Name = "Wojciech Szurgot",
+                            PhoneNumber = "123456789"
+                        });
+                });
+
             modelBuilder.Entity("MyGarage.Shared.Employee", b =>
                 {
                     b.HasOne("MyGarage.Shared.JobCategory", "JobCategory")

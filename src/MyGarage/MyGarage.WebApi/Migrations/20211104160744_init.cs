@@ -21,6 +21,23 @@ namespace MyGarage.WebApi.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Repairs",
+                columns: table => new
+                {
+                    RepairId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CarInfo = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Repairs", x => x.RepairId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Employees",
                 columns: table => new
                 {
@@ -64,6 +81,11 @@ namespace MyGarage.WebApi.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Repairs",
+                columns: new[] { "RepairId", "CarInfo", "Comment", "Email", "Name", "PhoneNumber" },
+                values: new object[] { 1, "Volkswagen Ogór", "Wymiana silnika", "wojciech.sz2@o2.pl", "Wojciech Szurgot", "123456789" });
+
+            migrationBuilder.InsertData(
                 table: "Employees",
                 columns: new[] { "EmployeeId", "BirthDate", "City", "Comment", "Email", "ExitDate", "FirstName", "JobCategoryId", "JoinedDate", "LastName", "PhoneNumber", "Street", "Zip" },
                 values: new object[] { 1, new DateTime(1979, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "Brussels", "Lorem Ipsum", "bethany@bethanyspieshop.com", null, "Bethany", 1, new DateTime(2015, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Smith", "324777888773", "Grote Markt 1", "1000" });
@@ -83,6 +105,9 @@ namespace MyGarage.WebApi.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Employees");
+
+            migrationBuilder.DropTable(
+                name: "Repairs");
 
             migrationBuilder.DropTable(
                 name: "JobCategories");

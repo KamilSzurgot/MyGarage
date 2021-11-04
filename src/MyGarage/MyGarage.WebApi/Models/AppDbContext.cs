@@ -59,6 +59,16 @@ namespace MyGarage.WebApi.Models
                 ExitDate = null,
                 JoinedDate = new DateTime(2017, 12, 24)
             });
+
+            modelBuilder.Entity<Repair>().HasData(new Repair
+            {
+                RepairId = 1,
+                Name = "Wojciech Szurgot",
+                Email = "wojciech.sz2@o2.pl",
+                CarInfo = "Volkswagen Ogór",
+                PhoneNumber = "123456789",
+                Comment = "Wymiana silnika"
+            });
         }
     }
 }

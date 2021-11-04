@@ -10,7 +10,7 @@ using MyGarage.WebApi.Models;
 namespace MyGarage.WebApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211030232809_init")]
+    [Migration("20211104160744_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -153,6 +153,50 @@ namespace MyGarage.WebApi.Migrations
                         {
                             JobCategoryId = 6,
                             JobCategoryName = "Customer service office"
+                        });
+                });
+
+            modelBuilder.Entity("MyGarage.Shared.Repair", b =>
+                {
+                    b.Property<int>("RepairId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CarInfo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("RepairId");
+
+                    b.ToTable("Repairs");
+
+                    b.HasData(
+                        new
+                        {
+                            RepairId = 1,
+                            CarInfo = "Volkswagen Ogór",
+                            Comment = "Wymiana silnika",
+                            Email = "wojciech.sz2@o2.pl",
+                            Name = "Wojciech Szurgot",
+                            PhoneNumber = "123456789"
                         });
                 });
 

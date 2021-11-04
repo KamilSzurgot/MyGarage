@@ -24,5 +24,8 @@ namespace MyGarage.Shared
 
         [Required]
         public string Comment { get; set; }
+
+        [Required]
+        public bool IsGood { get; set; }
     }
 }

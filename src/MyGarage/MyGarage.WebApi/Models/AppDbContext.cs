@@ -14,6 +14,7 @@ namespace MyGarage.WebApi.Models
         public DbSet<Employee> Employees { get; set; }
         public DbSet<JobCategory> JobCategories { get; set; }
         public DbSet<Repair> Repairs { get; set; }
+        public DbSet<Client> Clients { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -68,6 +69,16 @@ namespace MyGarage.WebApi.Models
                 CarInfo = "Volkswagen Ogór",
                 PhoneNumber = "123456789",
                 Comment = "Wymiana silnika"
+            });
+
+            modelBuilder.Entity<Client>().HasData(new Client
+            {
+                ClientId = 1,
+                Name = "Dominika Maćkowiak",
+                Email = "mackowiak.dominika@onet.pl",
+                PhoneNumber = "123456789",
+                Comment = "Po naprawie przynosi ciasto",
+                IsGood = true
             });
         }
     }

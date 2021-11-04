@@ -1,5 +1,53 @@
 ﻿@page "/repairdetail/{RepairId}"
+@using MyGarage.Shared
+@using MyGarage.Blazor.Services
+
+<h1 class="page-title">Repair details for @Repair.Name</h1>
+
+<div class="col-12 row">
+    <div class="col-10 row">
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Client's email'</label>
+                <div class="col-sm-8">
+                    <label type="text" class="form-control-plaintext">@Repair.Email</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Client's phone number</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@Repair.PhoneNumber</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Client's car information</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@Repair.CarInfo</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Information about the repair</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@Repair.Comment</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 @code {
+    [Parameter]
+    public string RepairId { get; set; }
+
+    public Repair Repair { get; set; } = new Repair();
+
+    [Inject]
+    public IRepairDataService RepairDataService { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        Repair = await RepairDataService.GetRepairDetails(int.Parse(RepairId));
+    }
 
 }

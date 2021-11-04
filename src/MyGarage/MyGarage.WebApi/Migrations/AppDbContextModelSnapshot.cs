@@ -19,6 +19,58 @@ namespace MyGarage.WebApi.Migrations
                 .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("MyGarage.Shared.Client", b =>
+                {
+                    b.Property<int>("ClientId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsGood")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ClientId");
+
+                    b.ToTable("Clients");
+
+                    b.HasData(
+                        new
+                        {
+                            ClientId = 1,
+                            Comment = "Po naprawie przynosi ciasto",
+                            Email = "mackowiak.dominika@onet.pl",
+                            IsGood = true,
+                            Name = "Dominika Maćkowiak",
+                            PhoneNumber = "123456789"
+                        },
+                        new
+                        {
+                            ClientId = 2,
+                            Comment = "Nasrał mi do ryżu",
+                            Email = "proallone76@gmail.com",
+                            IsGood = false,
+                            Name = "Bartosz Jakubski",
+                            PhoneNumber = "123456789"
+                        });
+                });
+
             modelBuilder.Entity("MyGarage.Shared.Employee", b =>
                 {
                     b.Property<int>("EmployeeId")

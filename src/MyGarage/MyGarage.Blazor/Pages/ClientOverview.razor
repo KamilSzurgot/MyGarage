@@ -1,5 +1,70 @@
 ﻿@page "/clientoverview"
 
+@using MyGarage.Shared
+@using MyGarage.Blazor.Services
+
+<h1 class="page-title">Memorable clients</h1>
+
+@if (Clients == null)
+{
+    <p><em>Loading...</em></p>
+}
+
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var client in Clients)
+            {
+                @if (client.IsGood == true)
+                {
+                    <tr style="background-color:green">
+                        <td>@client.Name</td>
+                        <td>
+                            <a href="@($"clientdetail/{client.ClientId}")" class="btn btn-primary" table-btn>
+                                <i class="fas fa-info-circle"></i>
+                            </a>
+                            <a href="@($"clientedit/{client.ClientId}")" class="btn btn-primary table-btn">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    <tr style="background-color:red">
+                        <td>@client.Name</td>
+                        <td>
+                            <a href="@($"clientdetail/{client.ClientId}")" class="btn btn-primary" table-btn>
+                                <i class="fas fa-info-circle"></i>
+                            </a>
+                            <a href="@($"clientedit/{client.ClientId}")" class="btn btn-primary table-btn">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+
+            }
+        </tbody>
+    </table>
+}
+
+
 @code {
+    public IEnumerable<Client> Clients { get; set; }
+
+    [Inject]
+    public IClientDataService ClientDataService { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        Clients = (await ClientDataService.GetAllClients()).ToList();
+    }
 
 }

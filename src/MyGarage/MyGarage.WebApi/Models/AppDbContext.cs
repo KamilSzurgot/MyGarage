@@ -80,6 +80,16 @@ namespace MyGarage.WebApi.Models
                 Comment = "Po naprawie przynosi ciasto",
                 IsGood = true
             });
+
+            modelBuilder.Entity<Client>().HasData(new Client
+            {
+                ClientId = 2,
+                Name = "Bartosz Jakubski",
+                Email = "proallone76@gmail.com",
+                PhoneNumber = "123456789",
+                Comment = "Nasrał mi do ryżu",
+                IsGood = false
+            });
         }
     }
 }

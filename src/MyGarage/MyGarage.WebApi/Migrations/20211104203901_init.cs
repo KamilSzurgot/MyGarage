@@ -8,6 +8,23 @@ namespace MyGarage.WebApi.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Clients",
+                columns: table => new
+                {
+                    ClientId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsGood = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Clients", x => x.ClientId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "JobCategories",
                 columns: table => new
                 {
@@ -68,6 +85,15 @@ namespace MyGarage.WebApi.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Clients",
+                columns: new[] { "ClientId", "Comment", "Email", "IsGood", "Name", "PhoneNumber" },
+                values: new object[,]
+                {
+                    { 1, "Po naprawie przynosi ciasto", "mackowiak.dominika@onet.pl", true, "Dominika Maćkowiak", "123456789" },
+                    { 2, "Nasrał mi do ryżu", "proallone76@gmail.com", false, "Bartosz Jakubski", "123456789" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "JobCategories",
                 columns: new[] { "JobCategoryId", "JobCategoryName" },
                 values: new object[,]
@@ -103,6 +129,9 @@ namespace MyGarage.WebApi.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Clients");
+
             migrationBuilder.DropTable(
                 name: "Employees");
 

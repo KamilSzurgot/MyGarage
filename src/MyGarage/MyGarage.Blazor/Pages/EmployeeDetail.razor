@@ -1,6 +1,7 @@
 ﻿@page "/employeedetail/{EmployeeId}"
 @using MyGarage.Shared
 @using MyGarage.Blazor.Services
+@inject NavigationManager NavigationManager
 
 <h1 class="page-title">Details for @Employee.FirstName @Employee.LastName</h1>
 
@@ -92,6 +93,7 @@
         </div>
     </div>
 </div>
+<a class="btn btn-outline-primary" @onclick="@NavigateToOverview">Back to overview</a>
 
 @code {
     [Parameter]
@@ -105,6 +107,11 @@
     protected async override Task OnInitializedAsync()
     {
         Employee = await EmployeeDataService.GetEmployeeDetails(int.Parse(EmployeeId));
+    }
+
+    protected void NavigateToOverview()
+    {
+        NavigationManager.NavigateTo("/employeeoverview");
     }
 
 }

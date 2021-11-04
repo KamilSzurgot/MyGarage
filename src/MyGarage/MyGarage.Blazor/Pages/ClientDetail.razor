@@ -1,5 +1,54 @@
 ﻿@page "/clientdetail/{ClientId}"
+@using MyGarage.Shared
+@using MyGarage.Blazor.Services
+@inject NavigationManager NavigationManager
+
+<h1 class="page-title">Client details for @Client.Name</h1>
+
+<div class="col-12 row">
+    <div class="col-10 row">
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Client's email'</label>
+                <div class="col-sm-8">
+                    <label type="text" class="form-control-plaintext">@Client.Email</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Client's phone number</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@Client.PhoneNumber</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Information about the client</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@Client.Comment</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a class="btn btn-outline-primary" @onclick="@NavigateToOverview">Back to overview</a>
+
+
 
 @code {
+    [Parameter]
+    public string ClientId { get; set; }
 
+    public Client Client { get; set; } = new Client();
+
+    [Inject]
+    public IClientDataService ClientDataService { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        Client = await ClientDataService.GetClientDetails(int.Parse(ClientId));
+    }
+
+    protected void NavigateToOverview()
+    {
+        NavigationManager.NavigateTo("/clientoverview");
+    }
 }

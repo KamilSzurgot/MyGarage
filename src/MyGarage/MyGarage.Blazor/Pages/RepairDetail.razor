@@ -1,6 +1,7 @@
 ﻿@page "/repairdetail/{RepairId}"
 @using MyGarage.Shared
 @using MyGarage.Blazor.Services
+@inject NavigationManager NavigationManager
 
 <h1 class="page-title">Repair details for @Repair.Name</h1>
 
@@ -34,6 +35,7 @@
         </div>
     </div>
 </div>
+<a class="btn btn-outline-primary" @onclick="@NavigateToOverview">Back to overview</a>
 
 
 @code {
@@ -48,6 +50,11 @@
     protected async override Task OnInitializedAsync()
     {
         Repair = await RepairDataService.GetRepairDetails(int.Parse(RepairId));
+    }
+
+    protected void NavigateToOverview()
+    {
+        NavigationManager.NavigateTo("/repairoverview");
     }
 
 }

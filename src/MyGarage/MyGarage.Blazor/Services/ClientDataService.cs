@@ -29,7 +29,7 @@ namespace MyGarage.Blazor.Services
             return null;
         }
 
-        public async Task Deleteclient(int clientId)
+        public async Task DeleteClient(int clientId)
         {
             await _httpClient.DeleteAsync($"api/client/{clientId}");
         }

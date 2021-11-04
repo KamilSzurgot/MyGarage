@@ -12,6 +12,6 @@ namespace MyGarage.Blazor.Services
         Task<Client> GetClientDetails(int clientId);
         Task<Client> AddClient(Client client);
         Task UpdateClient(Client client);
-        Task Deleteclient(int clientId);
+        Task DeleteClient(int clientId);
     }
 }

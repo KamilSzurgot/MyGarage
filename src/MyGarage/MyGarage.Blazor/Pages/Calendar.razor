@@ -1,6 +1,85 @@
 ﻿@page "/calendar"
 @using MyGarage.Shared
 
+
+<style type="text/css">
+    #tblParent tbody tr td {
+        width:200px;
+        height:200px;
+    }
+
+    #divParent {
+        position:relative;
+    }
+
+    #divModal {
+        z-index:10;
+        position:absolute;
+        border:1px solid #000000;
+        border-radius:3px;
+        background-color:#ffffff;
+        left:40%;
+        top:20%;
+        width:400px;
+        min-height:300px;
+    }
+
+    .modalHeading {
+        text-align:center;
+        font-size:50px;
+        text-decoration:underline;
+        margin-bottom:36px;
+    }
+</style>
+
+
+@if (displayModal)
+{
+    <div id="divModal">
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel-heading modalHeading">Set note</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>From: </label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="date" style="width:100%;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>To: </label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="date" style="width:100%;" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Note: </label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" placeholder="Type here..." />
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:10px;">
+                    <div class="col-md-6">
+
+                    </div>
+                    <div class="col-md-6" style="text-align:right;">
+                        <button class="btn btn-success" style="float:left; margin-right:5px;">Save</button>
+                        <button class="btn btn-danger" @onclick="CloseModal" style="float:left;">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
 <select @onchange="@LoadCalendar">
     @foreach (string monthName in monthNames)
             {
@@ -8,6 +87,41 @@
             }
 </select>
 
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            @for (var dayIndex = 0; dayIndex < days.Count(); dayIndex++)
+            {
+                <th>
+                    @days[dayIndex]
+                </th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @for (var weekIndex = 0; weekIndex < weeks.Count(); weekIndex++)
+            {
+                <tr>
+                    @for (var dayIndex = 0; dayIndex < weeks[weekIndex].Dates.Count(); dayIndex++)
+                     {
+                        var wIndex = weekIndex;
+                        var dIndex = dayIndex;
+
+                        <td @ondblclick="@(()=>OpenModal(wIndex, dIndex))">
+                            @weeks[weekIndex].Dates[dayIndex].DateValue
+                            <br /><br />
+
+                            <label style="color:#c00;font-weight:bold">@weeks[weekIndex].Dates[dayIndex].Note</label>
+                            <br /><br />
+
+                            Cell nr: [@weekIndex, @dayIndex]
+
+                        </td>
+                     }
+                </tr>
+            }
+    </tbody>
+</table>
 
 
 @code {
@@ -16,16 +130,87 @@
     List<Week> weeks = new List<Week>();
     DateTime startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
     DateTime endDate = (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)).AddMonths(1).AddDays(-1);
+    bool displayModal = false;
 
 
     protected override void OnInitialized()
     {
+        System.Globalization.CultureInfo.CurrentCulture = new System.Globalization.CultureInfo("en-GB", false);
         monthNames = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.MonthGenitiveNames.ToList();
+        GenerateCalendarHead();
+        GenerateCalendarBody();
     }
 
     private void LoadCalendar(ChangeEventArgs e)
     {
         var month = e.Value.ToString();
+        int monthIndex = DateTime.ParseExact(month, "MMMM", System.Globalization.CultureInfo.CreateSpecificCulture("en-GB")).Month;
+        startDate = new DateTime(DateTime.Now.Year, monthIndex, 1);
+        endDate = (new DateTime(DateTime.Now.Year, monthIndex, 1)).AddMonths(1).AddDays(-1);
+        GenerateCalendarHead();
+        GenerateCalendarBody();
+    }
+
+    private void GenerateCalendarHead()
+    {
+        var day = new List<string>();
+        for (var dt = startDate; dt <= endDate; dt = dt.AddDays(1))
+        {
+            day.Add(dt.ToString("dddd"));
+        }
+        days = day.Distinct().ToList();
+    }
+
+    private void GenerateCalendarBody()
+    {
+        weeks = new List<Week>();
+
+        int flag = 0;
+        Week week = new Week();
+        List<DayEvent> dates = new List<DayEvent>();
+        var totalDays = (int)(endDate - startDate).TotalDays;
+        int countDays = 0;
+
+        for (var dt = startDate; dt <= endDate; dt=dt.AddDays(1))
+        {
+            flag++;
+
+            dates.Add(new DayEvent()
+            {
+                DateValue = dt.ToString("dd-MMM-yyyy"),
+                DayName = dt.ToString("dddd")
+            });
+
+            if (flag ==7)
+            {
+                week = new Week();
+                week.Dates = dates;
+                weeks.Add(week);
+
+                dates = new List<DayEvent>();
+                flag = 0;
+            }
+            if (countDays == totalDays)
+            {
+                week = new Week();
+                week.Dates = dates;
+                weeks.Add(week);
+                break;
+            }
+            countDays++;
+        }
+
+
+    }
+
+    public void CloseModal()
+    {
+        displayModal = false;
+    }
+
+    public void OpenModal(int wIndex, int dIndex)
+    {
+        displayModal = true;
     }
 
 }

@@ -142,7 +142,7 @@ using MyGarage.Blazor.Services;
 
         if (employeeId == 0)
         {
-            Employee = new Employee { JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now, JobCategory = { JobCategoryId=1}  };
+            Employee = new Employee { JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now};
         }
         else
         {

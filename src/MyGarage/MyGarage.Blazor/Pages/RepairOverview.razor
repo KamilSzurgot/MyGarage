@@ -33,6 +33,9 @@ else
                             <i class="fas fa-edit"></i>
                         </a>
                     </td>
+                    <td>
+                        <button class="btn btn-primary" @onclick="SendEmail">Send email</button>
+                    </td>
                 </tr>
             }
         </tbody>
@@ -48,6 +51,11 @@ else
     protected async override Task OnInitializedAsync()
     {
         Repairs = (await RepairDataService.GetAllRepairs()).ToList();
+    }
+
+    public void SendEmail()
+    {
+        
     }
 
 }

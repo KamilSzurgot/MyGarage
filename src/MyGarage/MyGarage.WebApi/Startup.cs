@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using MyGarage.WebApi.EmailHelper;
 using MyGarage.WebApi.Models;
 
 namespace MyGarage.WebApi
@@ -28,6 +30,10 @@ namespace MyGarage.WebApi
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IClientRepository, ClientRepository>();
             services.AddScoped<IRepairRepository, RepairRepository>();
+            services.AddScoped<IEmailSender, EmailSender>();
+
+            var appSettingsSection = Configuration.GetSection("MailJetSettings");
+            services.Configure<MailJetSettings>(appSettingsSection);
 
             services.AddCors(options =>
             {

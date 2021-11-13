@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Mvc;
 using MyGarage.Shared;
 using MyGarage.WebApi.Models;
 using System;
@@ -13,10 +14,12 @@ namespace MyGarage.WebApi.Controllers
     public class RepairController : Controller
     {
         private readonly IRepairRepository _repairRepository;
+        private readonly IEmailSender _emailSender;
 
-        public RepairController(IRepairRepository repairRepository)
+        public RepairController(IRepairRepository repairRepository, IEmailSender emailSender)
         {
             _repairRepository = repairRepository;
+            _emailSender = emailSender;
         }
 
         [HttpGet]
@@ -70,6 +73,10 @@ namespace MyGarage.WebApi.Controllers
                 return NotFound();
 
             _repairRepository.UpdateRepair(repair);
+            if (repair.IsFinished == true)
+            {
+                _emailSender.SendEmailAsync(repair.Email, "Car is ready", "Hello Dear Customer! Your car is ready to pick up.");
+            }
 
             return NoContent(); //success
         }

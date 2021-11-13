@@ -38,6 +38,13 @@
                 <InputTextArea id="comment" class="form-control col-sm-8" @bind-Value="@Repair.Comment" placeholder="Enter comment"></InputTextArea>
             </div>
 
+            <div class="form-group row">
+                <label for="isfinished" class=" offset-sm-3">
+                    <InputCheckbox id="isfinished" @bind-Value="@Repair.IsFinished"></InputCheckbox>
+                    &nbsp;Finished
+                </label>
+            </div>
+
             <button type="submit" class="btn btn-primary edit-btn">Save</button>
 
             @if (Repair.RepairId > 0)

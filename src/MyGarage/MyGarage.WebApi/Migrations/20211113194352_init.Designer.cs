@@ -10,7 +10,7 @@ using MyGarage.WebApi.Models;
 namespace MyGarage.WebApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211104203901_init")]
+    [Migration("20211113194352_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,26 +51,6 @@ namespace MyGarage.WebApi.Migrations
                     b.HasKey("ClientId");
 
                     b.ToTable("Clients");
-
-                    b.HasData(
-                        new
-                        {
-                            ClientId = 1,
-                            Comment = "Po naprawie przynosi ciasto",
-                            Email = "mackowiak.dominika@onet.pl",
-                            IsGood = true,
-                            Name = "Dominika Maćkowiak",
-                            PhoneNumber = "123456789"
-                        },
-                        new
-                        {
-                            ClientId = 2,
-                            Comment = "Nasrał mi do ryżu",
-                            Email = "proallone76@gmail.com",
-                            IsGood = false,
-                            Name = "Bartosz Jakubski",
-                            PhoneNumber = "123456789"
-                        });
                 });
 
             modelBuilder.Entity("MyGarage.Shared.Employee", b =>
@@ -127,38 +107,6 @@ namespace MyGarage.WebApi.Migrations
                     b.HasIndex("JobCategoryId");
 
                     b.ToTable("Employees");
-
-                    b.HasData(
-                        new
-                        {
-                            EmployeeId = 1,
-                            BirthDate = new DateTime(1979, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brussels",
-                            Comment = "Lorem Ipsum",
-                            Email = "bethany@bethanyspieshop.com",
-                            FirstName = "Bethany",
-                            JobCategoryId = 1,
-                            JoinedDate = new DateTime(2015, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LastName = "Smith",
-                            PhoneNumber = "324777888773",
-                            Street = "Grote Markt 1",
-                            Zip = "1000"
-                        },
-                        new
-                        {
-                            EmployeeId = 2,
-                            BirthDate = new DateTime(1979, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Antwerp",
-                            Comment = "Lorem Ipsum",
-                            Email = "gill@bethanyspieshop.com",
-                            FirstName = "Gill",
-                            JobCategoryId = 2,
-                            JoinedDate = new DateTime(2017, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LastName = "Cleeren",
-                            PhoneNumber = "33999909923",
-                            Street = "New Street",
-                            Zip = "2000"
-                        });
                 });
 
             modelBuilder.Entity("MyGarage.Shared.JobCategory", b =>
@@ -227,6 +175,9 @@ namespace MyGarage.WebApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsFinished")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -239,17 +190,6 @@ namespace MyGarage.WebApi.Migrations
                     b.HasKey("RepairId");
 
                     b.ToTable("Repairs");
-
-                    b.HasData(
-                        new
-                        {
-                            RepairId = 1,
-                            CarInfo = "Volkswagen Ogór",
-                            Comment = "Wymiana silnika",
-                            Email = "wojciech.sz2@o2.pl",
-                            Name = "Wojciech Szurgot",
-                            PhoneNumber = "123456789"
-                        });
                 });
 
             modelBuilder.Entity("MyGarage.Shared.Employee", b =>

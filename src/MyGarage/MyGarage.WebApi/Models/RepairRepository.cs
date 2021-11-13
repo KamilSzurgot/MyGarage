@@ -51,6 +51,7 @@ namespace MyGarage.WebApi.Models
                 foundRepair.Email = repair.Email;
                 foundRepair.Comment = repair.Comment;
                 foundRepair.CarInfo = repair.CarInfo;
+                foundRepair.IsFinished = repair.IsFinished;
 
                 _appDbContext.SaveChanges();
 

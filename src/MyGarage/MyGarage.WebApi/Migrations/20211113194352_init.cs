@@ -47,7 +47,8 @@ namespace MyGarage.WebApi.Migrations
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Comment = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CarInfo = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CarInfo = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsFinished = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -85,15 +86,6 @@ namespace MyGarage.WebApi.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Clients",
-                columns: new[] { "ClientId", "Comment", "Email", "IsGood", "Name", "PhoneNumber" },
-                values: new object[,]
-                {
-                    { 1, "Po naprawie przynosi ciasto", "mackowiak.dominika@onet.pl", true, "Dominika Maćkowiak", "123456789" },
-                    { 2, "Nasrał mi do ryżu", "proallone76@gmail.com", false, "Bartosz Jakubski", "123456789" }
-                });
-
-            migrationBuilder.InsertData(
                 table: "JobCategories",
                 columns: new[] { "JobCategoryId", "JobCategoryName" },
                 values: new object[,]
@@ -105,21 +97,6 @@ namespace MyGarage.WebApi.Migrations
                     { 5, "Car painter" },
                     { 6, "Customer service office" }
                 });
-
-            migrationBuilder.InsertData(
-                table: "Repairs",
-                columns: new[] { "RepairId", "CarInfo", "Comment", "Email", "Name", "PhoneNumber" },
-                values: new object[] { 1, "Volkswagen Ogór", "Wymiana silnika", "wojciech.sz2@o2.pl", "Wojciech Szurgot", "123456789" });
-
-            migrationBuilder.InsertData(
-                table: "Employees",
-                columns: new[] { "EmployeeId", "BirthDate", "City", "Comment", "Email", "ExitDate", "FirstName", "JobCategoryId", "JoinedDate", "LastName", "PhoneNumber", "Street", "Zip" },
-                values: new object[] { 1, new DateTime(1979, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "Brussels", "Lorem Ipsum", "bethany@bethanyspieshop.com", null, "Bethany", 1, new DateTime(2015, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Smith", "324777888773", "Grote Markt 1", "1000" });
-
-            migrationBuilder.InsertData(
-                table: "Employees",
-                columns: new[] { "EmployeeId", "BirthDate", "City", "Comment", "Email", "ExitDate", "FirstName", "JobCategoryId", "JoinedDate", "LastName", "PhoneNumber", "Street", "Zip" },
-                values: new object[] { 2, new DateTime(1979, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "Antwerp", "Lorem Ipsum", "gill@bethanyspieshop.com", null, "Gill", 2, new DateTime(2017, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), "Cleeren", "33999909923", "New Street", "2000" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Employees_JobCategoryId",

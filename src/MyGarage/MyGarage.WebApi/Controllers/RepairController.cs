@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using MyGarage.Shared;
+using MyGarage.WebApi.EmailHelper;
 using MyGarage.WebApi.Models;
 using System;
 using System.Collections.Generic;
@@ -15,11 +16,13 @@ namespace MyGarage.WebApi.Controllers
     {
         private readonly IRepairRepository _repairRepository;
         private readonly IEmailSender _emailSender;
+        private readonly SmsService _sms;
 
-        public RepairController(IRepairRepository repairRepository, IEmailSender emailSender)
+        public RepairController(IRepairRepository repairRepository, IEmailSender emailSender, SmsService sms)
         {
             _repairRepository = repairRepository;
             _emailSender = emailSender;
+            _sms = sms;
         }
 
         [HttpGet]
@@ -76,6 +79,7 @@ namespace MyGarage.WebApi.Controllers
             if (repair.IsFinished == true)
             {
                 _emailSender.SendEmailAsync(repair.Email, "Car is ready", "Hello Dear Customer! Your car is ready to pick up.");
+                _sms.SendSms(repair.PhoneNumber, "+48885238770", "Hello, your car is ready to pick up. Sincerely, MyGarage");
             }
 
             return NoContent(); //success

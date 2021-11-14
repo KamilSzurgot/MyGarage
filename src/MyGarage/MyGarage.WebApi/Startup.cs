@@ -31,6 +31,7 @@ namespace MyGarage.WebApi
             services.AddScoped<IClientRepository, ClientRepository>();
             services.AddScoped<IRepairRepository, RepairRepository>();
             services.AddScoped<IEmailSender, EmailSender>();
+            services.AddSingleton<SmsService>();
 
             var appSettingsSection = Configuration.GetSection("MailJetSettings");
             services.Configure<MailJetSettings>(appSettingsSection);

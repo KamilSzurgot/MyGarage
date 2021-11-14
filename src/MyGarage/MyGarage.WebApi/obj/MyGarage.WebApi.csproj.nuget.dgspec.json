@@ -47,6 +47,10 @@
             "System.ComponentModel.Annotations": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "Vonage": {
+              "target": "Package",
+              "version": "[5.9.2, )"
             }
           },
           "imports": [
@@ -141,6 +145,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
+            },
+            "Vonage": {
+              "target": "Package",
+              "version": "[5.9.2, )"
             }
           },
           "imports": [

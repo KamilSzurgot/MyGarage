@@ -78,7 +78,6 @@ namespace MyGarage.WebApi.Controllers
             _repairRepository.UpdateRepair(repair);
             if (repair.IsFinished == true)
             {
-                _emailSender.SendEmailAsync(repair.Email, "Car is ready", "Hello Dear Customer! Your car is ready to pick up.");
                 _sms.SendSms(repair.PhoneNumber, "+48885238770", "Hello, your car is ready to pick up. Sincerely, MyGarage");
             }
 

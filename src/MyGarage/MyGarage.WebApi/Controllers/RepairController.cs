@@ -15,13 +15,11 @@ namespace MyGarage.WebApi.Controllers
     public class RepairController : Controller
     {
         private readonly IRepairRepository _repairRepository;
-        private readonly IEmailSender _emailSender;
         private readonly SmsService _sms;
 
-        public RepairController(IRepairRepository repairRepository, IEmailSender emailSender, SmsService sms)
+        public RepairController(IRepairRepository repairRepository, SmsService sms)
         {
             _repairRepository = repairRepository;
-            _emailSender = emailSender;
             _sms = sms;
         }
 

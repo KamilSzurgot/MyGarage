@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyGarage.Shared
 {
-    public class GeneratePDFCommand
+    public class GeneratePdfCommand
     {
         public CustomerModel Customer { get; set; }
         public InvoiceModel Invoice { get; set; }

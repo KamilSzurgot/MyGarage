@@ -675,3 +675,4 @@ C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\M
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\InvoicePage.razor.g.cs
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\Razor\Pages\InvoicePage.razor.g.cs
 C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\build-gz\cNyIWFL+.gz
+C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\obj\Debug\net5.0\MyGarage.Blazor.csproj.CopyComplete

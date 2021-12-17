@@ -17,6 +17,7 @@ namespace MyGarage.WebApi.Models
         public Client AddClient(Client client)
         {
             var addedEntity = _appDbContext.Clients.Add(client);
+
             _appDbContext.SaveChanges();
             return addedEntity.Entity;
         }

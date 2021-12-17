@@ -30,6 +30,7 @@ namespace MyGarage.WebApi
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IClientRepository, ClientRepository>();
             services.AddScoped<IRepairRepository, RepairRepository>();
+            services.AddScoped<IBlockchainRepository, BlockchainRepository>();
             services.AddSingleton<SmsService>();
 
             services.AddCors(options =>

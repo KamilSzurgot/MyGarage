@@ -10,7 +10,7 @@ using MyGarage.WebApi.Models;
 namespace MyGarage.WebApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211202124825_init")]
+    [Migration("20211217104825_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,6 +20,33 @@ namespace MyGarage.WebApi.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("MyGarage.Shared.Block", b =>
+                {
+                    b.Property<int>("BlockId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Data")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Hash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Index")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PreviousHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("TimeStamp")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("BlockId");
+
+                    b.ToTable("Blocks");
+                });
 
             modelBuilder.Entity("MyGarage.Shared.Client", b =>
                 {

@@ -13,10 +13,13 @@ namespace MyGarage.WebApi.Controllers
     public class ClientController : Controller
     {
         private readonly IClientRepository _clientRepository;
+        Blockchain ClientsBlockchain = new Blockchain();
+        private readonly IBlockchainRepository _blockchainRepository;
 
-        public ClientController(IClientRepository clientRepository)
+        public ClientController(IClientRepository clientRepository, IBlockchainRepository blockchainRepository)
         {
             _clientRepository = clientRepository;
+            _blockchainRepository = blockchainRepository;
         }
 
         [HttpGet]
@@ -46,6 +49,12 @@ namespace MyGarage.WebApi.Controllers
                 return BadRequest(ModelState);
 
             var createdClient = _clientRepository.AddClient(client);
+
+            var kloc = new Block(DateTime.Now, null, $"{client.ClientId}; {client.Name}; {client.Comment}; {client.IsGood}");
+
+
+            ClientsBlockchain.AddBlock(kloc);
+            var addedblock = _blockchainRepository.AddRepoBlock(kloc);
 
             return Created("client", createdClient);
         }
@@ -87,6 +96,39 @@ namespace MyGarage.WebApi.Controllers
             _clientRepository.DeleteClient(id);
 
             return NoContent();//success
+        }
+    }
+    public class Blockchain
+    {
+        public IList<Block> Chain { set; get; }
+        public Blockchain()
+        {
+            InitializeChain();
+            AddGenesisBlock();
+        }
+        public void InitializeChain()
+        {
+            Chain = new List<Block>();
+        }
+        public Block CreateGenesisBlock()
+        {
+            return new Block(DateTime.Now, null, "{}");
+        }
+        public void AddGenesisBlock()
+        {
+            Chain.Add(CreateGenesisBlock());
+        }
+        public Block GetLatestBlock()
+        {
+            return Chain[Chain.Count - 1];
+        }
+        public void AddBlock(Block block)
+        {
+            Block latestBlock = GetLatestBlock();
+            block.Index = latestBlock.Index + 1;
+            block.PreviousHash = latestBlock.Hash;
+            block.Hash = block.CalculateHash();
+            Chain.Add(block);
         }
     }
 }

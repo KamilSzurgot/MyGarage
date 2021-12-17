@@ -15,6 +15,7 @@ namespace MyGarage.WebApi.Models
         public DbSet<JobCategory> JobCategories { get; set; }
         public DbSet<Repair> Repairs { get; set; }
         public DbSet<Client> Clients { get; set; }
+        public DbSet<Block> Blocks { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

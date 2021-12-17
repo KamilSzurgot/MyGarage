@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyGarage.Shared
 {
-    public class InvoiceModel
+    public record InvoiceModel
     {
         private int _collectionHaschanged = -1;
         public InvoiceModel()
@@ -61,9 +61,9 @@ namespace MyGarage.Shared
         }
         public CustomerModel Customer { get; set; }
 
-        public int Number { get; set; } = 58656;
-        public string BusinessRegistrationNumber { get; set; } = "25.888.666/0000-88";
-        public string CompanyName { get; set; } = "Stark & Duster llc";
+        public int Number { get; set; }
+        public string BusinessRegistrationNumber { get; set; }
+        public string CompanyName { get; set; }
         public int InvoiceItensHasChanged => _collectionHaschanged;
 
         public ObservableCollection<InvoiceItem> Itens { get; set; }

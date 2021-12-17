@@ -2,6 +2,7 @@
 
 @using MyGarage.Shared
 @using MyGarage.Blazor.Services
+@inject NavigationManager NavigationManager
 
 <h1 class="page-title">Memorable clients</h1>
 
@@ -53,6 +54,8 @@ else
             }
         </tbody>
     </table>
+
+    <a class="btn btn-outline-primary" @onclick="@NavigateToCreateClient">Add new client</a>
 }
 
 
@@ -67,4 +70,8 @@ else
         Clients = (await ClientDataService.GetAllClients()).ToList();
     }
 
+    protected void NavigateToCreateClient()
+    {
+        NavigationManager.NavigateTo("/clientedit");
+    }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyGarage.Shared
 {
-    public class InvoiceItem
+    public record InvoiceItem
     {
         private decimal _unitPrice;
         private int _quantity;

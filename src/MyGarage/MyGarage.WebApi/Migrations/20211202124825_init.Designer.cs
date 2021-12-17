@@ -10,7 +10,7 @@ using MyGarage.WebApi.Models;
 namespace MyGarage.WebApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211113194352_init")]
+    [Migration("20211202124825_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -170,6 +170,9 @@ namespace MyGarage.WebApi.Migrations
                     b.Property<string>("Comment")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DeliveryDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .IsRequired()

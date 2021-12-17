@@ -48,6 +48,7 @@ namespace MyGarage.WebApi.Migrations
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Comment = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CarInfo = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DeliveryDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsFinished = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>

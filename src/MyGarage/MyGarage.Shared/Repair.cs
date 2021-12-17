@@ -29,6 +29,9 @@ namespace MyGarage.Shared
         public string CarInfo { get; set; }
 
         [Required]
+        public DateTime DeliveryDate { get; set; }
+
+        [Required]
         public bool IsFinished { get; set; }
     }
 }

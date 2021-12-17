@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyGarage.Shared
 {
-    public class CustomerModel
+    public record CustomerModel
     {
         public string Name { get; set; } = "";
         public string Address { get; set; } = "";

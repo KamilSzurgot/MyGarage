@@ -36,6 +36,7 @@
       "Newtonsoft.Json.dll": "sha256-XZbuUbKv9ZIDnuvC7SA9n1X935wIgvs00\/DgeDdJVKU=",
       "System.ComponentModel.Composition.dll": "sha256-mzoKInYw7fuACIw3vyHqCoJWhUZwUv1S5FT3NpRmiDA=",
       "System.IO.Pipelines.dll": "sha256-3ET+mpR7F058YRj9YaLHOVXBqOW6iUxtIpeiKPYw4PA=",
+      "System.Reactive.dll": "sha256-K2wx37H8YBmkKgB+0OXgBXTebqDEf+0MooK\/O7J3Gww=",
       "Vonage.dll": "sha256-zp0Fj8O2yWVydQzGbXOkb0oD9D\/eh00Y+XYsE+CoU0A=",
       "Microsoft.CSharp.dll": "sha256-SEwnf+OVKlIODJVwpgEv6vIGOQgiwk4qjESezL0QxA8=",
       "Microsoft.VisualBasic.Core.dll": "sha256-XL3EJfsR1dfJHFBlEOootw\/VNlFSBGvHp5JatxZNdBs=",
@@ -202,13 +203,13 @@
       "mscorlib.dll": "sha256-7WjHY56PbksCp7YOxNV59r6MqLujjAH8vhnMJ+zVezY=",
       "netstandard.dll": "sha256-5TcSqPhm3fAT6s3NH7+BMGakcfGgZGd3\/\/cVwVs2VPI=",
       "System.Private.CoreLib.dll": "sha256-VJv3DLM\/G0m\/RnTeWL9X8mkbxlsn8nNRhm0BHYEY+uo=",
-      "MyGarage.Shared.dll": "sha256-iCwuNhrsJVnVRHiiRsr7npZvGmTf4woq41wMx9LT9Hg=",
-      "MyGarage.Blazor.dll": "sha256-fv7S0S6Ud35mTbvS2SCRTOxn8Whj0uCzukRolJ0R2UI="
+      "MyGarage.Shared.dll": "sha256-IiqaLrT9o9NLOIyD1H\/n4Auf6YcL+7OlcHgFWMK2CSU=",
+      "MyGarage.Blazor.dll": "sha256-Lije2XmSX8MBJ7eWXMhMtWZeixRCib4N\/2wnVwyRqsE="
     },
     "lazyAssembly": null,
     "pdb": {
-      "MyGarage.Shared.pdb": "sha256-j9PuJFN8htzldqewTYFFcc\/fdsaZWRxBsJ5VJOyzSRQ=",
-      "MyGarage.Blazor.pdb": "sha256-\/ONi0sCaGNprRt7Klq7fVeJfEt\/0RF1gRRJ5Q9Id\/KM="
+      "MyGarage.Shared.pdb": "sha256-f3Wix4XTJKJSGX4k+S\/2ya59ne0Wn8WObYOL5eKavnk=",
+      "MyGarage.Blazor.pdb": "sha256-NS0Nuhr63CevZAnqstibQ3YeDaq1fUvwIzeIYtgwUSU="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-PvlHrby1PYtdX46ITs6pB8iDNqXNcewh8Eoa\/Gm2+GM=",

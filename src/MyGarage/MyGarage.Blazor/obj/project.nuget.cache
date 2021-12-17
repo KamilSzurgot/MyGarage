@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uOf3losSZU/C9OSo9b+tk4VbaHMiQa+mNnvqRte6fsAN0V8OhF88gVwPskJI4JKp/8IBvK1+UdVzavP7acU27Q==",
+  "dgSpecHash": "dbF1qRmH91N5sJrqwIc7u/CtWAuGzvUjzGoouwwvZfCYsYqs8jnujEVsCQpxm8StPP6ezBlZZVhSrmtBYjxg3g==",
   "success": true,
   "projectFilePath": "C:\\Users\\kamil\\Desktop\\szkola\\4 rok\\7 semestr\\inzynierka\\MyGarage\\src\\MyGarage\\MyGarage.Blazor\\MyGarage.Blazor.csproj",
   "expectedPackageFiles": [
@@ -98,6 +98,7 @@
     "C:\\Users\\kamil\\.nuget\\packages\\system.net.primitives\\4.3.0\\system.net.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\system.objectmodel\\4.0.12\\system.objectmodel.4.0.12.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\system.private.uri\\4.3.0\\system.private.uri.4.3.0.nupkg.sha512",
+    "C:\\Users\\kamil\\.nuget\\packages\\system.reactive\\5.0.0\\system.reactive.5.0.0.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\system.reflection.emit\\4.0.1\\system.reflection.emit.4.0.1.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.0.1\\system.reflection.emit.ilgeneration.4.0.1.nupkg.sha512",

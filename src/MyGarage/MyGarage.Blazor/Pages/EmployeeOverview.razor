@@ -1,6 +1,7 @@
 ﻿@page "/employeeoverview"
 @using MyGarage.Shared
-@using MyGarage.Blazor.Services 
+@using MyGarage.Blazor.Services
+@inject NavigationManager NavigationManager
 
 <h1 class="page-title">All employees</h1>
 
@@ -39,6 +40,7 @@ else
         </tbody>
     </table>
 }
+<a class="btn btn-outline-primary" @onclick="@NavigateToCreateEmployee">Add new employee</a>
 <button @onclick="QuickAddEmployee" class="btn btn-dark table-btn quick-add-btn">&nbsp;&nbsp;+&nbsp;&nbsp;</button>
 <AddEmployeeDialog @ref="AddEmployeeDialog" CloseEventCallback="@AddEmployeeDialog_OnDialogClose"></AddEmployeeDialog>
 
@@ -65,6 +67,11 @@ else
     {
         Employees = (await EmployeeDataService.GetAllEmployees()).ToList();
         StateHasChanged();
+    }
+
+    protected void NavigateToCreateEmployee()
+    {
+        NavigationManager.NavigateTo("/employeeedit");
     }
 
 }

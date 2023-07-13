@@ -1,0 +1,152 @@
+﻿@page "/repairedit"
+@page "/repairedit/{RepairId}"
+@using MyGarage.Shared
+@using MyGarage.Blazor.Services
+@inject NavigationManager NavigationManager
+
+@if (!Saved)
+{
+    <section class="repair-edit">
+        <h1 class="page-title">Repair details for @Repair.Name</h1>
+        <EditForm Model="@Repair" OnValidSubmit="@HandleValidSubmit"
+                  OnInvalidSubmit="@HandleInvalidSubmit">
+            <DataAnnotationsValidator />
+            <ValidationSummary></ValidationSummary>
+
+            <div class="form-group row">
+                <label for="Name" class="col-sm-3">Name: </label>
+                <InputText id="Name" class="form-control col-sm-8" @bind-Value="@Repair.Name" placeholder="Enter name"></InputText>
+            </div>
+
+            <div class="form-group row">
+                <label for="email" class="col-sm-3">Email: </label>
+                <InputText id="email" class="form-control col-sm-8" @bind-Value="@Repair.Email" placeholder="Enter email"></InputText>
+            </div>
+
+            <div class="form-group row">
+                <label for="deliverydate" class="col-sm-3">Date of taking the vehicle in: </label>
+                <InputDate id="deliverydate" class="form-control col-sm-8" @bind-Value="@Repair.DeliveryDate" placeholder="Enter date"></InputDate>
+            </div>
+
+            <div class="form-group row">
+                <label for="phonenumber" class="col-sm-3">Phone number: </label>
+                <InputText id="phonenumber" class="form-control col-sm-8" @bind-Value="@Repair.PhoneNumber" placeholder="Enter phone number"></InputText>
+            </div>
+
+            <div class="form-group row">
+                <label for="carinfo" class="col-sm-3">Car info: </label>
+                <InputText id="carinfo" class="form-control col-sm-8" @bind-Value="@Repair.CarInfo" placeholder="Enter car info"></InputText>
+            </div>
+
+            <div class="form-group row">
+                <label for="comment" class="col-sm-3">Info about the repair: </label>
+                <InputTextArea id="comment" class="form-control col-sm-8" @bind-Value="@Repair.Comment" placeholder="Enter comment"></InputTextArea>
+            </div>
+
+            <div class="form-group row">
+                <label for="isfinished" class=" offset-sm-3">
+                    <InputCheckbox id="isfinished" @bind-Value="@Repair.IsFinished"></InputCheckbox>
+                    &nbsp;Finished
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary edit-btn">Save</button>
+
+            @if (Repair.RepairId > 0)
+            {
+                <a class="btn btn-danger" @onclick="@DeleteRepair">Delete</a>
+            }
+
+            <a class="btn btn-outline-primary" @onclick="@NavigateToOverview">Back to overview</a>
+
+        </EditForm>
+
+    </section>
+}
+
+else
+{
+    <div class="alert @StatusClass">@Message</div>
+}
+
+@code {
+    [Inject]
+    public IRepairDataService RepairDataService { get; set; }
+
+    [Parameter]
+    public string RepairId { get; set; }
+
+    public Repair Repair { get; set; } = new Repair();
+
+
+    protected string Message = string.Empty;
+    protected string StatusClass = string.Empty;
+    protected bool Saved;
+
+    protected async override Task OnInitializedAsync()
+    {
+        Saved = false;
+
+        int.TryParse(RepairId, out var repairId);
+
+        if (repairId == 0)
+        {
+            Repair = new Repair(); //TO PEWNIE SIE WYJEBIE
+        }
+        else
+        {
+            Repair = await RepairDataService.GetRepairDetails(int.Parse(RepairId));
+        }
+
+    }
+
+    protected async Task HandleValidSubmit()
+    {
+        Saved = false;
+
+        if (Repair.RepairId == 0)
+        {
+            var addedRepair = await RepairDataService.AddRepair(Repair);
+            if (addedRepair != null)
+            {
+                StatusClass = "alert-success";
+                Message = "New repair added";
+                Saved = true;
+            }
+            else
+            {
+                StatusClass = "alert-danger";
+                Message = "Something went wrong";
+                Saved = false;
+            }
+        }
+        else
+        {
+            await RepairDataService.UpdateRepair(Repair);
+            StatusClass = "alert-success";
+            Message = "Repair updated";
+            Saved = true;
+        }
+    }
+
+    protected void HandleInvalidSubmit()
+    {
+        StatusClass = "alert-danger";
+        Message = "Validation error";
+    }
+
+    protected async Task DeleteRepair()
+    {
+        await RepairDataService.DeleteRepair(Repair.RepairId);
+
+        StatusClass = "alert-success";
+        Message = "Repair deleted";
+        Saved = true;
+    }
+
+    protected void NavigateToOverview()
+    {
+        NavigationManager.NavigateTo("/repairoverview");
+    }
+
+}

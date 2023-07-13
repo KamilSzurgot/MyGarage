@@ -7,6 +7,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
+      "jose-jwt.dll": "sha256-r1XIOdg6ib40q9XxDBms4hDVRDEyQ162PfaE7rCVBp4=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-ktaWu1p6pD2yy7T\/20KVYU7oihmpYm3jrPw4QHb7J+k=",
       "Microsoft.AspNetCore.Components.dll": "sha256-alrtyx++CQU1VO\/6akeZFBPsYgrGGm+Z5ax9\/kaPM3k=",
       "Microsoft.AspNetCore.Components.Authorization.dll": "sha256-hSnqbPyjGte1HezAKhUEQ7nToMTfVzY1MwL7WlthxwA=",
@@ -32,7 +33,11 @@
       "Microsoft.Extensions.Primitives.dll": "sha256-f2PgoftqEkKRuuiAk6S1MHygOuqZBHzB0HOB3vR93TU=",
       "Microsoft.JSInterop.dll": "sha256-2U21ELz08tKryAM9mMlyuFaZZyvZAS03M1ZyL\/T\/YyA=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-TZF2KGZRSev\/gMKjN7GoplW2xZPrK+yI4lECdonDwC4=",
+      "Newtonsoft.Json.dll": "sha256-XZbuUbKv9ZIDnuvC7SA9n1X935wIgvs00\/DgeDdJVKU=",
+      "System.ComponentModel.Composition.dll": "sha256-mzoKInYw7fuACIw3vyHqCoJWhUZwUv1S5FT3NpRmiDA=",
       "System.IO.Pipelines.dll": "sha256-3ET+mpR7F058YRj9YaLHOVXBqOW6iUxtIpeiKPYw4PA=",
+      "System.Reactive.dll": "sha256-K2wx37H8YBmkKgB+0OXgBXTebqDEf+0MooK\/O7J3Gww=",
+      "Vonage.dll": "sha256-zp0Fj8O2yWVydQzGbXOkb0oD9D\/eh00Y+XYsE+CoU0A=",
       "Microsoft.CSharp.dll": "sha256-SEwnf+OVKlIODJVwpgEv6vIGOQgiwk4qjESezL0QxA8=",
       "Microsoft.VisualBasic.Core.dll": "sha256-XL3EJfsR1dfJHFBlEOootw\/VNlFSBGvHp5JatxZNdBs=",
       "Microsoft.VisualBasic.dll": "sha256-6Ef+nnOJXtA9ZqlFaHQj+jX511l9zSapNKMFPC5CtBg=",
@@ -198,13 +203,13 @@
       "mscorlib.dll": "sha256-7WjHY56PbksCp7YOxNV59r6MqLujjAH8vhnMJ+zVezY=",
       "netstandard.dll": "sha256-5TcSqPhm3fAT6s3NH7+BMGakcfGgZGd3\/\/cVwVs2VPI=",
       "System.Private.CoreLib.dll": "sha256-VJv3DLM\/G0m\/RnTeWL9X8mkbxlsn8nNRhm0BHYEY+uo=",
-      "MyGarage.Shared.dll": "sha256-e1pwBy4qIIaCdfsEK5v+eCfszNefHZ\/cBRoLoSyJRTY=",
-      "MyGarage.Blazor.dll": "sha256-nT47XZGD\/KTbL\/DOkEj+7ZQkm2qSDjtkfsX+C5\/L0cg="
+      "MyGarage.Shared.dll": "sha256-8SCe03D3BlHDUT39xsR+zGiSFxJ0mtYhuJjy\/HMIE5I=",
+      "MyGarage.Blazor.dll": "sha256-5GV217fZZXQeBGwecIeYMg38dHIs1TjYWdWzqXrfBPM="
     },
     "lazyAssembly": null,
     "pdb": {
-      "MyGarage.Shared.pdb": "sha256-vzLjbZqHQiUn303sNW\/rwn\/G3IcZ3rNRxskZM83Weak=",
-      "MyGarage.Blazor.pdb": "sha256-049kkpwpZCOc3qgawY0dnHzqI0exIBQ3Fo4H7XzsBrk="
+      "MyGarage.Shared.pdb": "sha256-Mj0KX6agD6bXJGtLiscp5hXzLk5pjsC26k7tyBVl6+A=",
+      "MyGarage.Blazor.pdb": "sha256-I7DGuEc1NLkTHwhxf9qxxhPPL0B0UemPMMAFP++Bqeo="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-PvlHrby1PYtdX46ITs6pB8iDNqXNcewh8Eoa\/Gm2+GM=",

@@ -1,6 +1,7 @@
 ﻿@page "/employeedetail/{EmployeeId}"
 @using MyGarage.Shared
 @using MyGarage.Blazor.Services
+@inject NavigationManager NavigationManager
 
 <h1 class="page-title">Details for @Employee.FirstName @Employee.LastName</h1>
 
@@ -26,6 +27,7 @@
                     <label type="text" readonly class="form-control-plaintext">@Employee.LastName</label>
                 </div>
             </div>
+
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Birthdate</label>
                 <div class="col-sm-8">
@@ -69,25 +71,9 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-4 col-form-label">Gender</label>
+                <label class="col-sm-4 col-form-label">Experience</label>
                 <div class="col-sm-8">
-                    <label type="text" readonly class="form-control-plaintext">@Employee.Gender</label>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-4 col-form-label">Smoker</label>
-                <div class="col-sm-8">
-
-                    @if (Employee.Smoker)
-                    {
-                        <label type="text" readonly class="form-control-plaintext">Yes</label>
-                    }
-                    else
-                    {
-                        <label type="text" readonly class="form-control-plaintext">No</label>
-
-                    }
+                    <label type="text" readonly class="form-control-plaintext">@Employee.Comment</label>
                 </div>
             </div>
 
@@ -107,6 +93,7 @@
         </div>
     </div>
 </div>
+<a class="btn btn-outline-primary" @onclick="@NavigateToOverview">Back to overview</a>
 
 @code {
     [Parameter]
@@ -120,6 +107,11 @@
     protected async override Task OnInitializedAsync()
     {
         Employee = await EmployeeDataService.GetEmployeeDetails(int.Parse(EmployeeId));
+    }
+
+    protected void NavigateToOverview()
+    {
+        NavigationManager.NavigateTo("/employeeoverview");
     }
 
 }

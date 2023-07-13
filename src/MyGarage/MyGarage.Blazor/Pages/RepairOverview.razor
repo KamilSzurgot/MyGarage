@@ -1,0 +1,62 @@
+﻿@page "/repairoverview"
+
+@using MyGarage.Shared
+@using MyGarage.Blazor.Services
+@inject NavigationManager NavigationManager
+
+<h1 class="page-title">Current repairs</h1>
+
+@if (Repairs == null)
+{
+    <p><em>Loading...</em></p>
+}
+
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Car info</th>
+                <th>Repair start date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var repair in Repairs)
+            {
+                <tr>
+                    <td>@repair.Name</td>
+                    <td>@repair.CarInfo</td>
+                    <td>@repair.DeliveryDate.ToShortDateString()</td>
+                    <td>
+                        <a href="@($"repairdetail/{repair.RepairId}")" class="btn btn-primary" table-btn>
+                            <i class="fas fa-info-circle"></i>
+                        </a>
+                        <a href="@($"repairedit/{repair.RepairId}")" class="btn btn-primary table-btn">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a class="btn btn-outline-primary" @onclick="@NavigateToCreateRepair">Add new repair</a>
+}
+
+@code {
+    public IEnumerable<Repair> Repairs { get; set; }
+
+    [Inject]
+    public IRepairDataService RepairDataService { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        Repairs = (await RepairDataService.GetAllRepairs()).ToList();
+    }
+
+    protected void NavigateToCreateRepair()
+    {
+        NavigationManager.NavigateTo("/repairedit");
+    }
+}

@@ -91,7 +91,7 @@ using MyGarage.Blazor.Components;
 #nullable disable
 #nullable restore
 #line 12 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\_Imports.razor"
-using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
+using MyGarage.Blazor.Config;
 
 #line default
 #line hidden
@@ -119,7 +119,7 @@ using MyGarage.Blazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 111 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\Pages\EmployeeDetail.razor"
+#line 98 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\Pages\EmployeeDetail.razor"
        
     [Parameter]
     public string EmployeeId { get; set; }
@@ -134,10 +134,16 @@ using MyGarage.Blazor.Services;
         Employee = await EmployeeDataService.GetEmployeeDetails(int.Parse(EmployeeId));
     }
 
+    protected void NavigateToOverview()
+    {
+        NavigationManager.NavigateTo("/employeeoverview");
+    }
+
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

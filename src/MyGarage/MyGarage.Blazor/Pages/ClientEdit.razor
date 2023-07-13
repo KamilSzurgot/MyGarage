@@ -1,0 +1,143 @@
+﻿@page "/clientedit"
+@page "/clientedit/{ClientId}"
+@using MyGarage.Shared
+@using MyGarage.Blazor.Services
+@inject NavigationManager NavigationManager
+
+@if (!Saved)
+{
+    <section class="client-edit">
+        <h1 class="page-title">Client details for @Client.Name</h1>
+        <EditForm Model="@Client" OnValidSubmit="@HandleValidSubmit"
+                  OnInvalidSubmit="@HandleInvalidSubmit">
+            <DataAnnotationsValidator />
+            <ValidationSummary></ValidationSummary>
+
+            <div class="form-group row">
+                <label for="Name" class="col-sm-3">Name: </label>
+                <InputText id="Name" class="form-control col-sm-8" @bind-Value="@Client.Name" placeholder="Enter name"></InputText>
+            </div>
+
+            <div class="form-group row">
+                <label for="email" class="col-sm-3">Email: </label>
+                <InputText id="email" class="form-control col-sm-8" @bind-Value="@Client.Email" placeholder="Enter email"></InputText>
+            </div>
+
+            <div class="form-group row">
+                <label for="phonenumber" class="col-sm-3">Phone number: </label>
+                <InputText id="phonenumber" class="form-control col-sm-8" @bind-Value="@Client.PhoneNumber" placeholder="Enter phone number"></InputText>
+            </div>
+
+            <div class="form-group row">
+                <label for="comment" class="col-sm-3">Info about the repair: </label>
+                <InputTextArea id="comment" class="form-control col-sm-8" @bind-Value="@Client.Comment" placeholder="Enter comment"></InputTextArea>
+            </div>
+
+            <div class="form-group row">
+                <label for="isgood" class=" offset-sm-3">
+                    <InputCheckbox id="isgood" @bind-Value="@Client.IsGood"></InputCheckbox>
+                    &nbsp;IsGood
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary edit-btn">Save</button>
+
+            @if (Client.ClientId > 0)
+            {
+                <a class="btn btn-danger" @onclick="@DeleteClient">Delete</a>
+            }
+
+            <a class="btn btn-outline-primary" @onclick="@NavigateToOverview">Back to overview</a>
+
+        </EditForm>
+
+    </section>
+}
+
+else
+{
+    <div class="alert @StatusClass">@Message</div>
+}
+
+@code {
+    [Inject]
+    public IClientDataService ClientDataService { get; set; }
+
+    [Parameter]
+    public string ClientId { get; set; }
+
+    public Client Client { get; set; } = new Client();
+
+
+    protected string Message = string.Empty;
+    protected string StatusClass = string.Empty;
+    protected bool Saved;
+
+    protected async override Task OnInitializedAsync()
+    {
+        Saved = false;
+
+        int.TryParse(ClientId, out var clientId);
+
+        if (clientId == 0)
+        {
+            Client = new Client(); 
+        }
+        else
+        {
+            Client = await ClientDataService.GetClientDetails(int.Parse(ClientId));
+        }
+
+    }
+
+    protected async Task HandleValidSubmit()
+    {
+        Saved = false;
+
+        if (Client.ClientId == 0)
+        {
+            var addedClient = await ClientDataService.AddClient(Client);
+            if (addedClient != null)
+            {
+                StatusClass = "alert-success";
+                Message = "New client added";
+                Saved = true;
+            }
+            else
+            {
+                StatusClass = "alert-danger";
+                Message = "Something went wrong";
+                Saved = false;
+            }
+        }
+        else
+        {
+            await ClientDataService.UpdateClient(Client);
+            StatusClass = "alert-success";
+            Message = "Client updated";
+            Saved = true;
+        }
+    }
+
+    protected void HandleInvalidSubmit()
+    {
+        StatusClass = "alert-danger";
+        Message = "Validation error";
+    }
+
+    protected async Task DeleteClient()
+    {
+        await ClientDataService.DeleteClient(Client.ClientId);
+
+        StatusClass = "alert-success";
+        Message = "Client deleted";
+        Saved = true;
+    }
+
+    protected void NavigateToOverview()
+    {
+        NavigationManager.NavigateTo("/clientoverview");
+    }
+
+}
+

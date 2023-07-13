@@ -51,7 +51,7 @@
 
 
 @code {
-    public Employee Employee { get; set; } = new Employee { CountryId = 1, JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
+    public Employee Employee { get; set; } = new Employee { JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
 
     [Inject]
     public IEmployeeDataService EmployeeDataService { get; set; }
@@ -63,7 +63,7 @@
 
     public void ResetDialog()
     {
-        Employee = new Employee { CountryId = 1, JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
+        Employee = new Employee { JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
     }
 
     public void Show()

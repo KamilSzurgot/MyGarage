@@ -47,6 +47,10 @@
             "System.ComponentModel.Annotations": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "Vonage": {
+              "target": "Package",
+              "version": "[5.9.2, )"
             }
           },
           "imports": [
@@ -112,6 +116,18 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Mailjet.Api": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": {
+              "target": "Package",
+              "version": "[5.0.12, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.12, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.11, )"
@@ -133,6 +149,14 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
+            },
+            "Vonage": {
+              "target": "Package",
+              "version": "[5.9.2, )"
+            },
+            "iTextSharp.LGPLv2.Core": {
+              "target": "Package",
+              "version": "[1.7.5, )"
             }
           },
           "imports": [

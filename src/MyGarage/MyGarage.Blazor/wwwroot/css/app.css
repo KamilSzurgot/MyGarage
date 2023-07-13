@@ -13,16 +13,22 @@ body {
 }
 
 nav {
-    background-color: #a593c2;
-    border-color: #a593c2;
+    background-color: #ad1c1c;
+    border-color: #ad1c1c;
+}
+
+img {
+    margin: auto;
+    display: block;
 }
 
 #logo {
-    width: 80%;
+    width: 70%;
+    height: 95%;
 }
 
 #navbarSupportedContent {
-    height: 80px;
+    height: 111px;
 }
 
 .navbar {
@@ -30,10 +36,10 @@ nav {
 }
 
 .sidebar-logo {
-    height: 80px;
-    background-color: #17a2b8;
-    border-color: #17a2b8;
-    width: 240px;
+    height: 111px;
+    background-color: #7b979c;
+    border-color: #7b979c;
+    width: 180px;
 }
 
 
@@ -79,7 +85,7 @@ nav {
 }
 
 #sidebar-wrapper {
-    width: 240px;
+    width: 180px;
     min-height: 100vh;
     margin-left: -15rem;
     -webkit-transition: margin .25s ease-out;
@@ -94,13 +100,13 @@ nav {
     }
 
     #sidebar-wrapper .list-group {
-        width: 15rem;
+        width: 180px;
     }
 
 .list-group-item.active, .list-group-item.active:active, .list-group-item.active:focus, .list-group-item.active:visited {
     color: white;
-    background-color: #a593c2 !important;
-    border-color: #a593c2;
+    background-color: #ad1c1c !important;
+    border-color: #ad1c1c;
     font-weight: bold;
 }
 
@@ -137,17 +143,17 @@ nav {
 }
 
 .page-title {
-    color: #23cfa7;
+    color: black;
     font-size: 28px;
 }
 
 .table {
-    background-color: white;
+    background-color: #adb5bd;
 }
 
 .table-btn {
-    background-color: #23cfa7;
-    border-color: #23cfa7;
+    background-color: #418778;
+    border-color: #418778;
     border-radius: 50%;
 }
 

@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyGarage.Shared", "MyGarage
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyGarage.WebApi", "MyGarage.WebApi\MyGarage.WebApi.csproj", "{929B996F-4C29-41B7-8098-8B75F8C023CA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marvin.IDP", "Marvin.IDP\Marvin.IDP.csproj", "{C9D31976-D5D7-4CF1-A0F4-7C801AEC64A4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{929B996F-4C29-41B7-8098-8B75F8C023CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{929B996F-4C29-41B7-8098-8B75F8C023CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{929B996F-4C29-41B7-8098-8B75F8C023CA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C9D31976-D5D7-4CF1-A0F4-7C801AEC64A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C9D31976-D5D7-4CF1-A0F4-7C801AEC64A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C9D31976-D5D7-4CF1-A0F4-7C801AEC64A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C9D31976-D5D7-4CF1-A0F4-7C801AEC64A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

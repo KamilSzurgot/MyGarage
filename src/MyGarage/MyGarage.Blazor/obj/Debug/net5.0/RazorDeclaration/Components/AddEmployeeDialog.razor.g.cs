@@ -91,7 +91,7 @@ using MyGarage.Blazor.Components;
 #nullable disable
 #nullable restore
 #line 12 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\_Imports.razor"
-using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
+using MyGarage.Blazor.Config;
 
 #line default
 #line hidden
@@ -120,7 +120,7 @@ using MyGarage.Blazor.Services;
 #nullable restore
 #line 53 "C:\Users\kamil\Desktop\szkola\4 rok\7 semestr\inzynierka\MyGarage\src\MyGarage\MyGarage.Blazor\Components\AddEmployeeDialog.razor"
        
-    public Employee Employee { get; set; } = new Employee { CountryId = 1, JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
+    public Employee Employee { get; set; } = new Employee { JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
 
     [Inject]
     public IEmployeeDataService EmployeeDataService { get; set; }
@@ -132,7 +132,7 @@ using MyGarage.Blazor.Services;
 
     public void ResetDialog()
     {
-        Employee = new Employee { CountryId = 1, JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
+        Employee = new Employee { JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
     }
 
     public void Show()

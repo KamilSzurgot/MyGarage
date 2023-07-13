@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using MyGarage.WebApi.EmailHelper;
 using MyGarage.WebApi.Models;
 
 namespace MyGarage.WebApi
@@ -24,9 +26,12 @@ namespace MyGarage.WebApi
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddScoped<ICountryRepository, CountryRepository>();
             services.AddScoped<IJobCategoryRepository, JobCategoryRepository>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IClientRepository, ClientRepository>();
+            services.AddScoped<IRepairRepository, RepairRepository>();
+            services.AddScoped<IBlockchainRepository, BlockchainRepository>();
+            services.AddSingleton<SmsService>();
 
             services.AddCors(options =>
             {
